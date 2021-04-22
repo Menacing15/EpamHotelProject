@@ -4,7 +4,7 @@
   body {
     text-align: center;
     color: bisque;
-    background-image: url("https://initiate.alphacoders.com/images/769/cropped-1920-1080-769160.jpg?8521");
+    background-image: url(image/bg.jpg);
     font-family: HelveticaNeueCyr, cursive;
   }
   h1 {
@@ -31,7 +31,7 @@
       <tr>
         <td>Login</td>
         <td><label>
-          <input type="text" name="username"/>
+          <input type="text" name="login"/>
         </label></td>
       </tr>
       <tr>
@@ -42,7 +42,7 @@
       </tr>
     </table>
     <br>
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Login" />
   </form>
 </body>
 </html>
