@@ -44,5 +44,6 @@
     <br>
     <input type="submit" value="Login" />
   </form>
+  <a href = registration.jsp>I am new customer</a>
 </body>
 </html>
