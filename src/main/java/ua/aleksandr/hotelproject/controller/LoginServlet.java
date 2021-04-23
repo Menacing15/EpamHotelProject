@@ -11,10 +11,10 @@ import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
 
-    private LoginDao loginDao;
+    private LoginDao dao;
 
     public void init() {
-        loginDao = new LoginDao();
+        dao = new LoginDao();
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,14 +25,21 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("login");
         String password = request.getParameter("password");
+
         LoginData loginData = new LoginData();
+
         loginData.setUsername(username);
         loginData.setPassword(password);
 
-        if (loginDao.validate(loginData)) {
+        String role = dao.authenticate(loginData);
+
+        if(role.equals("admin") || role.equals("user") ) {
+            request.getSession().setAttribute("role", role);
             response.sendRedirect("home");
-        } else {
-            doGet(request,response);
+        }
+        else {
+            request.setAttribute("errMessage", role);
+            response.sendRedirect("login");
         }
     }
 }

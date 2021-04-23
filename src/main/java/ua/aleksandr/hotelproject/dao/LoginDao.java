@@ -12,23 +12,34 @@ public class LoginDao {
 
     private Connector connector;
 
-    public boolean validate(LoginData loginData) {
-        boolean status = false;
-
+    public String authenticate(LoginData loginData)
+    {
         connector = new ConnectorJDBC("hoteldb","postgres","1234");
 
+        String userName = loginData.getUsername();
+        String password = loginData.getPassword();
+
         try (PreparedStatement preparedStatement =
-                     connector.getConnection().prepareStatement("SELECT * FROM login WHERE username = ? AND password = ? ")) {
+                     connector.getConnection().prepareStatement("SELECT * FROM login WHERE username = ? AND password = ?")) {
             preparedStatement.setString(1, loginData.getUsername());
             preparedStatement.setString(2, loginData.getPassword());
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-            ResultSet rs = preparedStatement.executeQuery();
-            status = rs.next();
+            while(resultSet.next()) {
+                String userNameDB = resultSet.getString("username");
+                String passwordDB = resultSet.getString("password");
+                String roleDB = resultSet.getString("role");
+
+                if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("admin"))
+                    return "admin";
+                else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("user"))
+                    return "user";
+            }
 
         } catch (SQLException e) {
             printSQLException(e);
         }
-        return status;
+        return "mismatch";
     }
 
     private void printSQLException(SQLException ex) {

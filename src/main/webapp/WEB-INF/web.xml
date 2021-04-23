@@ -15,12 +15,14 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>ua.aleksandr.hotelproject.controller.HomeServlet</servlet-class>
+        <servlet-name>RoleServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.RoleServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>HomeServlet</servlet-name>
+        <servlet-name>RoleServlet</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
+
+
 </web-app>
