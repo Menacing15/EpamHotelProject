@@ -1,28 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
-<style>
-  body {
-    text-align: center;
-    color: bisque;
-    background-image: url(image/bg.jpg);
-    font-family: HelveticaNeueCyr, cursive;
-  }
-  h1 {
-    text-shadow: 4px 4px 2px black;
-    font-size: 84px;
-  }
-  form {
-    display: inline-block;
-  }
-
-  table {
-    font-size: 24px;
-    text-shadow: 2px 2px 1px black;
-  }
-  input {
-    font-size: 24px;
-  }
-</style>
+<head>
+  <title>Login Account</title>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" />
+</head>
 
 <body>
   <h1>Welcome to our hotel!</h1>
@@ -44,6 +25,7 @@
     <br>
     <input type="submit" value="Login" />
   </form>
-  <a href = registration.jsp>I am new customer</a>
+  <br>
+  <p><a href = "${pageContext.request.contextPath}/register">I am new customer</a></p>
 </body>
 </html>

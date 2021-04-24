@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    color: bisque;
+    background-image: url(../images/bg.jpg);
+    font-family: HelveticaNeueCyr, cursive;
+}
+h1 {
+    text-shadow: 4px 4px 2px black;
+    font-size: 84px;
+}
+form {
+    display: inline-block;
+}
+
+table {
+    font-size: 24px;
+    text-shadow: 2px 2px 1px black;
+}
+input {
+    font-size: 24px;
+}
+
+p {
+    font-size: 24px;
+    text-shadow: 1px 1px 1px black;
+    font-family: HelveticaNeueCyr, cursive;
+}
+
+a {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}

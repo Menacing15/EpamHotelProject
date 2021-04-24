@@ -9,22 +9,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class LoginServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 
     private LoginDao dao;
 
-    public void init() {
-        dao = new LoginDao();
-    }
-
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("dao", dao);
-        req.getRequestDispatcher("login.jsp").forward(req, resp);
+        dao = (LoginDao) req.getSession().getAttribute("dao");
+        req.getRequestDispatcher("registration.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("login");
+        String username = req.getParameter("email");
         String password = req.getParameter("password");
 
         LoginData loginData = new LoginData();
@@ -32,15 +29,12 @@ public class LoginServlet extends HttpServlet {
         loginData.setUsername(username);
         loginData.setPassword(password);
 
-        String role = dao.authenticate(loginData);
 
-        if(role.equals("admin") || role.equals("user") ) {
-            req.getSession().setAttribute("role", role);
+        if (dao.createUser(loginData)) {
+            req.getSession().setAttribute("role", "user");
             resp.sendRedirect("home");
-        }
-        else {
-            req.setAttribute("errMessage", role);
-            resp.sendRedirect("login");
+        } else {
+            resp.sendRedirect("registration.jsp");
         }
     }
 }

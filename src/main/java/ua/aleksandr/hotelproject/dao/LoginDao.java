@@ -12,10 +12,11 @@ public class LoginDao {
 
     private Connector connector;
 
-    public String authenticate(LoginData loginData)
-    {
-        connector = new ConnectorJDBC("hoteldb","postgres","1234");
+    public LoginDao() {
+        connector = new ConnectorJDBC("hoteldb", "postgres", "1234");
+    }
 
+    public String authenticate(LoginData loginData) {
         String userName = loginData.getUsername();
         String password = loginData.getPassword();
 
@@ -25,14 +26,14 @@ public class LoginDao {
             preparedStatement.setString(2, loginData.getPassword());
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 String userNameDB = resultSet.getString("username");
                 String passwordDB = resultSet.getString("password");
                 String roleDB = resultSet.getString("role");
 
-                if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("admin"))
+                if (userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("admin"))
                     return "admin";
-                else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("user"))
+                else if (userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("user"))
                     return "user";
             }
 
@@ -42,8 +43,24 @@ public class LoginDao {
         return "mismatch";
     }
 
+    public boolean createUser(LoginData loginData) {
+        boolean set = false;
+        try (PreparedStatement preparedStatement =
+                     connector.getConnection().prepareStatement("INSERT INTO login (username, password, role) VALUES (?, ?, ?)")) {
+            preparedStatement.setString(1, loginData.getUsername());
+            preparedStatement.setString(2, loginData.getPassword());
+            preparedStatement.setString(3, "user");
+
+            preparedStatement.executeUpdate();
+            set = true;
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return set;
+    }
+
     private void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
+        for (Throwable e : ex) {
             if (e instanceof SQLException) {
                 e.printStackTrace(System.err);
                 System.err.println("SQLState: " + ((SQLException) e).getSQLState());

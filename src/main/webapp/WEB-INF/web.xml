@@ -24,5 +24,15 @@
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
 
+<servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.RegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
