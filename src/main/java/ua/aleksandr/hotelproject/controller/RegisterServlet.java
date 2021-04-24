@@ -34,7 +34,8 @@ public class RegisterServlet extends HttpServlet {
             req.getSession().setAttribute("role", "user");
             resp.sendRedirect("home");
         } else {
-            resp.sendRedirect("registration.jsp");
+            req.setAttribute("error", "Invalid input");
+            req.getRequestDispatcher("registration.jsp").forward(req, resp);
         }
     }
 }

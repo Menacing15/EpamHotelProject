@@ -6,4 +6,5 @@
 <body>
 USER
 </body>
+<%@ include file="logout.jsp" %>
 </html>

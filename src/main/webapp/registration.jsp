@@ -11,7 +11,7 @@
         <tr>
             <td>Email</td>
             <td><label>
-                <input type="text" name="email"/>
+                <input type="email" name="email"/>
             </label></td>
         </tr>
         <tr>
@@ -19,6 +19,10 @@
             <td><label>
                 <input type="password" name="password"/>
             </label></td>
+        </tr>
+        <tr>
+            <td><span style="color:red">
+          <%=(request.getAttribute("error") == null) ? "" : request.getAttribute("error")%></span></td>
         </tr>
     </table>
     <br>

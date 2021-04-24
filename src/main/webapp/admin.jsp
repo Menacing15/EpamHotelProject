@@ -6,4 +6,5 @@
 <body>
 ADMIN
 </body>
+<%@ include file="logout.jsp" %>
 </html>

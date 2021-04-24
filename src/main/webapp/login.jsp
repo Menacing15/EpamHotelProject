@@ -12,7 +12,7 @@
       <tr>
         <td>Login</td>
         <td><label>
-          <input type="text" name="login"/>
+          <input type="email" name="email"/>
         </label></td>
       </tr>
       <tr>
@@ -24,6 +24,8 @@
     </table>
     <br>
     <input type="submit" value="Login" />
+    <br>
+    <span><%=(request.getAttribute("error") == null) ? "" : request.getAttribute("error")%></span>
   </form>
   <br>
   <p><a href = "${pageContext.request.contextPath}/register">I am new customer</a></p>
