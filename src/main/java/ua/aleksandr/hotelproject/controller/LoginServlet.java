@@ -39,8 +39,8 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect("home");
         }
         else {
-            req.setAttribute("error", "Invalid input");
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
+            req.getSession().setAttribute("error", "Invalid input");
+            resp.sendRedirect("login");
         }
     }
 }

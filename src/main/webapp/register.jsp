@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td><span style="color:red">
-          <%=(request.getAttribute("error") == null) ? "" : request.getAttribute("error")%></span></td>
+          <%=(request.getSession().getAttribute("error") == null) ? "" : request.getSession().getAttribute("error"))%></span></td>
         </tr>
     </table>
     <br>

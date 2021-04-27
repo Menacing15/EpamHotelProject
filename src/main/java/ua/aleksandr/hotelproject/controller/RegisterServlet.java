@@ -16,7 +16,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         dao = (LoginDao) req.getSession().getAttribute("dao");
-        req.getRequestDispatcher("registration.jsp").forward(req, resp);
+        req.getRequestDispatcher("register.jsp").forward(req, resp);
     }
 
     @Override
@@ -34,8 +34,8 @@ public class RegisterServlet extends HttpServlet {
             req.getSession().setAttribute("role", "user");
             resp.sendRedirect("home");
         } else {
-            req.setAttribute("error", "Invalid input");
-            req.getRequestDispatcher("registration.jsp").forward(req, resp);
+            req.getSession().setAttribute("error", "Invalid input");
+            resp.sendRedirect("register");
         }
     }
 }
