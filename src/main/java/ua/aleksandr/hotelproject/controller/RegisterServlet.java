@@ -32,9 +32,10 @@ public class RegisterServlet extends HttpServlet {
 
         if (dao.createUser(loginData)) {
             req.getSession().setAttribute("role", "user");
+            req.getSession().removeAttribute("regError");
             resp.sendRedirect("home");
         } else {
-            req.getSession().setAttribute("error", "Invalid input");
+            req.getSession().setAttribute("regError", "Account with this email already exists");
             resp.sendRedirect("register");
         }
     }

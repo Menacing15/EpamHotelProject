@@ -25,7 +25,7 @@
     <br>
     <input type="submit" value="Login" />
     <br>
-    <span><%=(request.getSession().getAttribute("error") == null) ? "" : request.getSession().getAttribute("error")%></span>
+    <span><%=(request.getSession().getAttribute("logError") == null) ? "" : request.getSession().getAttribute("logError")%></span>
   </form>
   <br>
   <p><a href = "${pageContext.request.contextPath}/register">I am new customer</a></p>

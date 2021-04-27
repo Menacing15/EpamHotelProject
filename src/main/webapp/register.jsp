@@ -20,13 +20,11 @@
                 <input type="password" name="password"/>
             </label></td>
         </tr>
-        <tr>
-            <td><span style="color:red">
-          <%=(request.getSession().getAttribute("error") == null) ? "" : request.getSession().getAttribute("error"))%></span></td>
-        </tr>
     </table>
     <br>
     <input type="submit" value="Register" />
+    <br>
+    <span><%=(request.getSession().getAttribute("regError") == null) ? "" : request.getSession().getAttribute("regError")%></span>
 </form>
 <p><a href = "${pageContext.request.contextPath}/login">I already have an account</a></p>
 </body>

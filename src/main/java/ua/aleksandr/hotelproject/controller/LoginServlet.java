@@ -36,10 +36,11 @@ public class LoginServlet extends HttpServlet {
 
         if(role.equals("admin") || role.equals("user") ) {
             req.getSession().setAttribute("role", role);
+            req.getSession().removeAttribute("logError");
             resp.sendRedirect("home");
         }
         else {
-            req.getSession().setAttribute("error", "Invalid input");
+            req.getSession().setAttribute("logError", "Bad login or password");
             resp.sendRedirect("login");
         }
     }
