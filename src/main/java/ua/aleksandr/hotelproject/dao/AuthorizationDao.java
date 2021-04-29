@@ -8,11 +8,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginDao {
+public class AuthorizationDao {
 
     private Connector connector;
 
-    public LoginDao() {
+    public AuthorizationDao() {
         connector = new ConnectorJDBC("hoteldb", "postgres", "1234");
     }
 
