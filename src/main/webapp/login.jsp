@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Login Account</title>
-  <link rel="stylesheet" href="<c:url value="/css/styles.css"/>" />
+  <link rel="stylesheet" href="<c:url value="/css/styles.css"/>"/>
 </head>
 
 <body>
@@ -13,13 +13,13 @@
       <tr>
         <td>Login</td>
         <td><label>
-          <input type="email" name="email"/>
+          <input type="email" name="email" required/>
         </label></td>
       </tr>
       <tr>
         <td>Password</td>
         <td><label>
-          <input type="password" name="password"/>
+          <input type="password" name="password" required/>
         </label></td>
       </tr>
     </table>

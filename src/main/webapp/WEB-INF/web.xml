@@ -46,7 +46,7 @@
 
     <filter>
         <filter-name>LoginFilter</filter-name>
-        <filter-class>ua.aleksandr.hotelproject.LoginFilter</filter-class>
+        <filter-class>ua.aleksandr.hotelproject.filter.LoginFilter</filter-class>
     </filter>
 
     <filter-mapping>
