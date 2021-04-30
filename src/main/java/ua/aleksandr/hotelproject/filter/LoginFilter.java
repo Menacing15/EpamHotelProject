@@ -1,10 +1,12 @@
-package ua.aleksandr.hotelproject;
+package ua.aleksandr.hotelproject.filter;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+
+//Throws logged out user to login page, allows only /login /register pages to visit
 
 public class LoginFilter implements Filter {
 
@@ -27,9 +29,12 @@ public class LoginFilter implements Filter {
 
         boolean isLoginPage = httpRequest.getRequestURI().endsWith("login");
 
+        boolean isResource = httpRequest.getRequestURI().endsWith(".css") ||
+                httpRequest.getRequestURI().endsWith(".jpg"); //without this css doesn't work
+
         if (isLoggedIn && (isLoginRequest || isLoginPage)) {
             resp.sendRedirect("home");
-        } else if (isLoggedIn || isLoginRequest || isRegisterRequest) {
+        } else if (isLoggedIn || isLoginRequest || isRegisterRequest || isResource) {
             chain.doFilter(req, res);
         } else {
             resp.sendRedirect("login");
