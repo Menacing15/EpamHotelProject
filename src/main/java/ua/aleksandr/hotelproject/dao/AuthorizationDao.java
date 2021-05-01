@@ -4,6 +4,7 @@ import ua.aleksandr.hotelproject.module.Connector;
 import ua.aleksandr.hotelproject.module.ConnectorJDBC;
 import ua.aleksandr.hotelproject.module.LoginData;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,61 +18,73 @@ public class AuthorizationDao {
     }
 
     public String authenticate(LoginData loginData) {
-        String userName = loginData.getUsername();
-        String password = loginData.getPassword();
+        String givenUsername = loginData.getUsername();
+        String givenPassword = loginData.getPassword();
 
-        try (PreparedStatement preparedStatement =
-                     connector.getConnection().prepareStatement("SELECT * FROM login WHERE username = ? AND password = ?")) {
+        try (PreparedStatement preparedStatement = connector.getConnection().
+                prepareStatement("SELECT * FROM login WHERE username = ?")) {
+
             preparedStatement.setString(1, loginData.getUsername());
-            preparedStatement.setString(2, loginData.getPassword());
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                String userNameDB = resultSet.getString("username");
-                String passwordDB = resultSet.getString("password");
-                String roleDB = resultSet.getString("role");
+                String actualUsername = resultSet.getString("username");
+                String actualPassword = resultSet.getString("password");
+                byte[] salt = resultSet.getBytes("salt");
+                String role = resultSet.getString("role");
 
-                if (userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("admin"))
+                SaltPasswordHasher hasher = new SHA512SaltPasswordHasher();
+                givenPassword = hasher.hash(givenPassword, salt);
+
+                if (givenUsername.equals(actualUsername)
+                        && givenPassword.equals(actualPassword)
+                        && role.equals("admin"))
                     return "admin";
-                else if (userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("user"))
+                else if (givenUsername.equals(actualUsername)
+                        && givenPassword.equals(actualPassword)
+                        && role.equals("user"))
                     return "user";
             }
 
         } catch (SQLException e) {
-            printSQLException(e);
+            printException(e);
         }
         return "mismatch";
     }
 
+
+
     public boolean createUser(LoginData loginData) {
         boolean set = false;
-        try (PreparedStatement preparedStatement =
-                     connector.getConnection().prepareStatement("INSERT INTO login (username, password, role) VALUES (?, ?, ?)")) {
+        try (PreparedStatement preparedStatement = connector.getConnection().
+                prepareStatement("INSERT INTO login (username, password, salt, role) VALUES (?, ?, ?, ?)")) {
+
+            SaltPasswordHasher hasher = new SHA512SaltPasswordHasher();
+            byte[] salt = hasher.getSalt();
+            String hashedPassword =  hasher.hash(loginData.getPassword(), salt);
+
             preparedStatement.setString(1, loginData.getUsername());
-            preparedStatement.setString(2, loginData.getPassword());
-            preparedStatement.setString(3, "user");
+            preparedStatement.setString(2, hashedPassword);
+            preparedStatement.setBytes(3, salt);
+            preparedStatement.setString(4, "user");
 
             preparedStatement.executeUpdate();
             set = true;
-        } catch (SQLException e) {
-            printSQLException(e);
+        } catch (SQLException | NoSuchAlgorithmException e) {
+            printException(e);
         }
         return set;
     }
 
-    private void printSQLException(SQLException ex) {
-        for (Throwable e : ex) {
-            if (e instanceof SQLException) {
-                e.printStackTrace(System.err);
-                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
-                System.err.println("Message: " + e.getMessage());
-                Throwable cause = ex.getCause();
-                while (cause != null) {
-                    System.out.println("Cause: " + cause);
-                    cause = cause.getCause();
-                }
-            }
+    //auxiliary  method
+    private void printException(Exception ex) {
+        System.err.println("Message: " + ex.getMessage());
+        Throwable cause = ex.getCause();
+        while (cause != null) {
+            System.out.println("Cause: " + cause);
+            cause = cause.getCause();
         }
     }
+
+
 }

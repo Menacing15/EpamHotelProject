@@ -20,7 +20,7 @@ public class LoginFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse)res;
         HttpSession session = httpRequest.getSession(false);
 
-        boolean isLoggedIn = (session != null && session.getAttribute("dao") != null);
+        boolean isLoggedIn = (session != null && session.getAttribute("role") != null);
 
         String loginURI = httpRequest.getContextPath() + "/login";
         boolean isLoginRequest = httpRequest.getRequestURI().equals(loginURI);
