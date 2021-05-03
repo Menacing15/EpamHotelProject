@@ -2,7 +2,7 @@ package ua.aleksandr.hotelproject.dao;
 
 import ua.aleksandr.hotelproject.module.Connector;
 import ua.aleksandr.hotelproject.module.ConnectorJDBC;
-import ua.aleksandr.hotelproject.module.LoginData;
+import ua.aleksandr.hotelproject.bean.LoginData;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;

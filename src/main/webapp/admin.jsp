@@ -4,7 +4,8 @@
     <title>Title</title>
 </head>
 <body>
-ADMIN
+<p><a href = "${pageContext.request.contextPath}/rooms">Choose room independently</a></p>
+<p><a href = "${pageContext.request.contextPath}/order">Leave order</a></p>
 </body>
 <%@ include file="logout.jsp" %>
 </html>

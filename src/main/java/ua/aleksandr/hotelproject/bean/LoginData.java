@@ -1,4 +1,4 @@
-package ua.aleksandr.hotelproject.module;
+package ua.aleksandr.hotelproject.bean;
 
 public class LoginData {
 

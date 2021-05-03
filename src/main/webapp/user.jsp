@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-USER
+<p><a href = "${pageContext.request.contextPath}/rooms">Rooms</a></p>
 </body>
 <%@ include file="logout.jsp" %>
 </html>

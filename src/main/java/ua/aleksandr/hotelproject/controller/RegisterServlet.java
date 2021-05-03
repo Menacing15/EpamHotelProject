@@ -1,7 +1,7 @@
 package ua.aleksandr.hotelproject.controller;
 
 import ua.aleksandr.hotelproject.dao.AuthorizationDao;
-import ua.aleksandr.hotelproject.module.LoginData;
+import ua.aleksandr.hotelproject.bean.LoginData;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
