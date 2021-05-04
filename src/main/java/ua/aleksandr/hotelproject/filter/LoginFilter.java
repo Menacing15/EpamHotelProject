@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 //Throws logged out user to login page, allows only /login /register pages to visit
-
 public class LoginFilter implements Filter {
 
     @Override
