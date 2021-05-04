@@ -2,8 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-  <title>Login Account</title>
-  <link rel="stylesheet" href="<c:url value="/css/styles.css"/>"/>
+  <title>Epam Hotel</title>
+  <link rel="stylesheet" href= "${pageContext.request.contextPath}/css/log.css"/>
 </head>
 
 <body>

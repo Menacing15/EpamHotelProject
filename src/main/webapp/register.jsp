@@ -2,8 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Register Account</title>
-    <link rel="stylesheet" href="<c:url value="/css/styles.css"/>" />
+    <title>Registration</title>
+    <link rel="stylesheet" href= "${pageContext.request.contextPath}/css/log.css" />
 </head>
 <body>
 <h1>Hotel Registration</h1>
