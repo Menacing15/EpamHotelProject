@@ -14,7 +14,7 @@ public class AuthorizationDao {
     private Connector connector;
 
     public AuthorizationDao() {
-        connector = new ConnectorJDBC("hoteldb", "postgres", "1234");
+        connector = new ConnectorJDBC();
     }
 
     public String authenticate(LoginData loginData) {

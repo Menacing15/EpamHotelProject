@@ -1,7 +1,5 @@
 package ua.aleksandr.hotelproject.module;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,7 +11,7 @@ public class ConnectorJDBC implements Connector {
 
     private Connection connection;
 
-    public ConnectorJDBC(String database, String user, String password) {
+    public ConnectorJDBC() {
         connect();
     }
 
