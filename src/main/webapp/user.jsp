@@ -7,9 +7,9 @@
 <body>
 <h2>Please choose most convenient option for booking the room.</h2>
 <p>
-    <a href="${pageContext.request.contextPath}/rooms">Choose room independently</a>
+    <a href="${pageContext.request.contextPath}/home/rooms">Choose room independently</a>
     <br>
-    <a href="${pageContext.request.contextPath}/order">Leave order</a>
+    <a href="${pageContext.request.contextPath}/home/order">Leave order</a>
 </p>
 </body>
 <%@ include file="logout.jsp" %>

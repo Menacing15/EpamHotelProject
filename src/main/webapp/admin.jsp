@@ -7,9 +7,9 @@
 <body>
 <h2>ADMIN PAGE</h2>
 <p>
-    <a href="${pageContext.request.contextPath}/rooms">Rooms</a>
+    <a href="${pageContext.request.contextPath}home/rooms">Rooms</a>
     <br>
-    <a href="${pageContext.request.contextPath}/orders">Orders</a>
+    <a href="${pageContext.request.contextPath}/home/orders">Orders</a>
 </p>
 </body>
 <%@ include file="logout.jsp" %>
