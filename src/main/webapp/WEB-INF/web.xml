@@ -47,7 +47,7 @@
 
     <servlet>
         <servlet-name>RoomServlet</servlet-name>
-        <servlet-class>ua.aleksandr.hotelproject.controller.RoomsServlet</servlet-class>
+        <servlet-class>ua.aleksandr.hotelproject.controller.RoomServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

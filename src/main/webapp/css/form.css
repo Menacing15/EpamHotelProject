@@ -1,0 +1,9 @@
+body {
+    font-size: 24px;
+    text-align: center;
+    font-family: HelveticaNeueCyr, cursive;
+}
+
+form {
+    display: inline-block;
+}

@@ -1,5 +1,6 @@
 package ua.aleksandr.hotelproject.dao;
 
+import ua.aleksandr.hotelproject.bean.RoomData;
 import ua.aleksandr.hotelproject.module.Connector;
 import ua.aleksandr.hotelproject.module.ConnectorJDBC;
 import ua.aleksandr.hotelproject.bean.LoginData;
@@ -9,11 +10,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AuthorizationDao {
+public class DataBaseDao {
 
     private Connector connector;
 
-    public AuthorizationDao() {
+    public DataBaseDao() {
         connector = new ConnectorJDBC();
     }
 
@@ -71,6 +72,24 @@ public class AuthorizationDao {
             preparedStatement.executeUpdate();
             set = true;
         } catch (SQLException | NoSuchAlgorithmException e) {
+            printException(e);
+        }
+        return set;
+    }
+
+    public boolean addRoom(RoomData room) {
+        boolean set = false;
+        try (PreparedStatement preparedStatement = connector.getConnection().
+                prepareStatement("INSERT INTO rooms (type, size, price, status) VALUES (?, ?, ?, ?)")) {
+
+            preparedStatement.setString(1, room.getType());
+            preparedStatement.setInt(2, room.getSize());
+            preparedStatement.setInt(3, room.getPrice());
+            preparedStatement.setString(4, room.getStatus());
+
+            preparedStatement.executeUpdate();
+            set = true;
+        } catch (SQLException e) {
             printException(e);
         }
         return set;
