@@ -1,6 +1,6 @@
 package ua.aleksandr.hotelproject.controller;
 
-import ua.aleksandr.hotelproject.dao.AuthorizationDao;
+import ua.aleksandr.hotelproject.dao.DataBaseDao;
 import ua.aleksandr.hotelproject.bean.LoginData;
 
 import javax.servlet.ServletException;
@@ -11,10 +11,10 @@ import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
 
-    private AuthorizationDao dao;
+    private DataBaseDao dao;
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        dao = new AuthorizationDao();
+        dao = new DataBaseDao();
         req.getSession().setAttribute("dao", dao);
         req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
