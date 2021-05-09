@@ -2,6 +2,16 @@ package ua.aleksandr.hotelproject.bean;
 
 public class RoomData {
 
+    public RoomData() {
+    }
+
+    public RoomData(String type, int size, int price, String status) {
+        this.type = type;
+        this.size = size;
+        this.price = price;
+        this.status = status;
+    }
+
     private String type;
     private int size;
     private int price;
@@ -37,5 +47,10 @@ public class RoomData {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    String [] toArray() {
+        return new String[] {type, Integer.toString(size),
+                Integer.toString(price), status};
     }
 }

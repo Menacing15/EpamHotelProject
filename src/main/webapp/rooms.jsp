@@ -10,9 +10,7 @@
     <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
         <a href = "${pageContext.request.contextPath}/form.jsp" >Add room</a>
         <br>
-        <a href = "${pageContext.request.contextPath}/form.jsp" >Delete room</a>
-        <br>
-        <a href = "${pageContext.request.contextPath}/form.jsp" >Change room</a>
+        <a href = "${pageContext.request.contextPath}/home/rooms/edit" >Update room</a>
     </c:when>
     <c:otherwise>
         user rooms

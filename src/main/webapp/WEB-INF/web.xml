@@ -65,6 +65,16 @@
         <url-pattern>/home/orders</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>EditRoomServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.EditRoomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EditRoomServlet</servlet-name>
+        <url-pattern>/home/rooms/edit</url-pattern>
+    </servlet-mapping>
+
     <!--FILTERS-->
     <filter>
         <filter-name>LoginFilter</filter-name>

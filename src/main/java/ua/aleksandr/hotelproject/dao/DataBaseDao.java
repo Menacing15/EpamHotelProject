@@ -9,6 +9,10 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class DataBaseDao {
 
@@ -54,7 +58,6 @@ public class DataBaseDao {
     }
 
 
-
     public boolean createUser(LoginData loginData) {
         boolean set = false;
         try (PreparedStatement preparedStatement = connector.getConnection().
@@ -62,7 +65,7 @@ public class DataBaseDao {
 
             SaltPasswordHasher hasher = new SHA512SaltPasswordHasher();
             byte[] salt = hasher.getSalt();
-            String hashedPassword =  hasher.hash(loginData.getPassword(), salt);
+            String hashedPassword = hasher.hash(loginData.getPassword(), salt);
 
             preparedStatement.setString(1, loginData.getUsername());
             preparedStatement.setString(2, hashedPassword);
@@ -95,6 +98,41 @@ public class DataBaseDao {
         return set;
     }
 
+    public List<RoomData> getTableData() {
+        List<RoomData> result = new ArrayList<>();
+        try (PreparedStatement statement =
+                     connector.getConnection().prepareStatement("SELECT * FROM rooms")) {
+            ResultSet resultSet = statement.executeQuery();
+            RoomData room;
+            while (resultSet.next()) {
+                room = new RoomData(resultSet.getString("type"), resultSet.getInt("size"),
+                        resultSet.getInt("price"), resultSet.getString("status"));
+                result.add(room);
+            }
+            return result;
+        } catch (SQLException e) {
+            String message = e.getMessage();
+            System.out.println(message);
+            return result;
+        }
+    }
+
+    public Set<String> getColumnNames(String tableName) {
+        Set<String> names = new LinkedHashSet<>();
+        String query = "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = ?";
+        try (PreparedStatement statement = connector.getConnection().prepareStatement(query)) {
+            statement.setString(1, tableName);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                names.add(resultSet.getString("column_name"));
+            }
+            return names;
+        } catch (SQLException e) {
+            String[] message = e.getMessage().split("[\n]");
+            throw new RuntimeException(message[0]);
+        }
+    }
+
     //auxiliary  method
     private void printException(Exception ex) {
         System.err.println("Message: " + ex.getMessage());
@@ -104,6 +142,4 @@ public class DataBaseDao {
             cause = cause.getCause();
         }
     }
-
-
 }
