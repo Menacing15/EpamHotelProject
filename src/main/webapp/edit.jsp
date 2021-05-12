@@ -6,7 +6,11 @@
         border: 1px solid black;
         border-collapse: collapse;
     }
+    form {
+        display: block;
+    }
 </style>
+
 <head>
     <title>Edit Rooms</title>
 </head>
@@ -17,6 +21,11 @@
             <c:forEach items="${row}" var="element">
                 <td>${element}</td>
             </c:forEach>
+            <form action="<%=request.getContextPath()%>/home/rooms/edit" method="post">
+                <input type="hidden" name="deleted" value="${row}"/>
+                <input type="image"  src="${pageContext.request.contextPath}/images/trash.jpg"
+                       name="REMOVE" alt="submit" width="24" height="24"/>
+            </form>
         </tr>
     </c:forEach>
 </table>

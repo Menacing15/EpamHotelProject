@@ -5,13 +5,15 @@ public class RoomData {
     public RoomData() {
     }
 
-    public RoomData(String type, int size, int price, String status) {
+    public RoomData(int number, String type, int size, int price, String status) {
+        this.number = number;
         this.type = type;
         this.size = size;
         this.price = price;
         this.status = status;
     }
 
+    private int number;
     private String type;
     private int size;
     private int price;
@@ -21,7 +23,7 @@ public class RoomData {
         return type;
     }
 
-    public void getType(String category) {
+    public void setType(String category) {
         this.type = category;
     }
 
@@ -49,8 +51,11 @@ public class RoomData {
         this.status = status;
     }
 
-    String [] toArray() {
-        return new String[] {type, Integer.toString(size),
-                Integer.toString(price), status};
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+
     }
 }

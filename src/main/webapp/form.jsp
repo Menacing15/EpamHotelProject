@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Form</title>
@@ -7,6 +8,12 @@
 <body>
 <form action="<%=request.getContextPath()%>/home/rooms" method="post">
     <table>
+        <tr>
+            <td>Number</td>
+            <td><label>
+                <input type="number" name="number" required/>
+            </label></td>
+        </tr>
         <tr>
             <td>Category</td>
             <td><label>

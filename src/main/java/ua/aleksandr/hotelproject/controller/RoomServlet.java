@@ -15,7 +15,7 @@ public class RoomServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/rooms.jsp").forward(req, resp);
+        req.getRequestDispatcher("/room_menu.jsp").forward(req, resp);
         dao = (DataBaseDao) req.getSession().getAttribute("dao");
     }
 
@@ -23,15 +23,13 @@ public class RoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("CREATE") != null) {
             RoomData room = new RoomData();
-            room.getType(req.getParameter("type"));
+            room.setNumber(req.getParameter("number"));
+            room.setType(req.getParameter("type"));
             room.setPrice(Integer.parseInt(req.getParameter("price")));
             room.setSize(Integer.parseInt(req.getParameter("size")));
             room.setStatus(req.getParameter("status"));
             dao.addRoom(room);
+            resp.sendRedirect("rooms");
         }
-        else if (req.getParameter("remove") != null) {
-
-        }
-        resp.sendRedirect("rooms");
     }
 }

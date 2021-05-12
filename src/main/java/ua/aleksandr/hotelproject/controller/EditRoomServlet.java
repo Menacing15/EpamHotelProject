@@ -33,6 +33,15 @@ public class EditRoomServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getParameter("REMOVE") != null) {
+            String values = req.getParameter("deleted");
+            refactor(values);
+            dao.deleteRoom(req.getParameter("deleted"));
+        }
+
+    }
+
+    private void refactor(String values) {
 
     }
 
@@ -48,6 +57,7 @@ public class EditRoomServlet extends HttpServlet {
             List<String> row = new ArrayList<>(columns.size());
             result.add(row);
 
+            row.add(Integer.toString(data.getNumber()));
             row.add(data.getType());
             row.add(Integer.toString(data.getSize()));
             row.add(Integer.toString(data.getPrice()));

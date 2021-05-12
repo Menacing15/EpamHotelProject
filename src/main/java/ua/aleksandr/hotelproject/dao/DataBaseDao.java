@@ -83,12 +83,13 @@ public class DataBaseDao {
     public boolean addRoom(RoomData room) {
         boolean set = false;
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("INSERT INTO rooms (type, size, price, status) VALUES (?, ?, ?, ?)")) {
+                prepareStatement("INSERT INTO rooms (number, type, size, price, status) VALUES (?, ?, ?, ?, ?)")) {
 
-            preparedStatement.setString(1, room.getType());
-            preparedStatement.setInt(2, room.getSize());
-            preparedStatement.setInt(3, room.getPrice());
-            preparedStatement.setString(4, room.getStatus());
+            preparedStatement.setInt(1, room.getNumber());
+            preparedStatement.setString(2, room.getType());
+            preparedStatement.setInt(3, room.getSize());
+            preparedStatement.setInt(4, room.getPrice());
+            preparedStatement.setString(5, room.getStatus());
 
             preparedStatement.executeUpdate();
             set = true;
@@ -105,7 +106,7 @@ public class DataBaseDao {
             ResultSet resultSet = statement.executeQuery();
             RoomData room;
             while (resultSet.next()) {
-                room = new RoomData(resultSet.getString("type"), resultSet.getInt("size"),
+                room = new RoomData(resultSet.getInt("number"), resultSet.getString("type"), resultSet.getInt("size"),
                         resultSet.getInt("price"), resultSet.getString("status"));
                 result.add(room);
             }
@@ -141,5 +142,9 @@ public class DataBaseDao {
             System.out.println("Cause: " + cause);
             cause = cause.getCause();
         }
+    }
+
+    public void deleteRoom(String deleted) {
+
     }
 }
