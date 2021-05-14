@@ -26,7 +26,6 @@ public class EditRoomServlet extends HttpServlet {
         } else {
             req.setAttribute("table", result);
         }
-
         req.getRequestDispatcher("/edit.jsp").forward(req, resp);
     }
 
@@ -35,14 +34,17 @@ public class EditRoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("REMOVE") != null) {
             String values = req.getParameter("deleted");
-            refactor(values);
-            dao.deleteRoom(req.getParameter("deleted"));
+            int number = createRoomData(values);
+            dao.deleteRoom(number);
+            resp.sendRedirect("edit");
         }
-
     }
 
-    private void refactor(String values) {
-
+    private int createRoomData(String values) {
+        values = values.substring(1);
+        values = values.substring(0, values.length() - 1);
+        String[] data = values.split(", ");
+        return Integer.parseInt(data[0]);
     }
 
     private List<List<String>> buildTable() {

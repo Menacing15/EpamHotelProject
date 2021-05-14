@@ -23,7 +23,7 @@ public class RoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("CREATE") != null) {
             RoomData room = new RoomData();
-            room.setNumber(req.getParameter("number"));
+            room.setNumber(Integer.parseInt(req.getParameter("number")));
             room.setType(req.getParameter("type"));
             room.setPrice(Integer.parseInt(req.getParameter("price")));
             room.setSize(Integer.parseInt(req.getParameter("size")));

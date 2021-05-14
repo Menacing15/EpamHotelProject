@@ -55,7 +55,7 @@ public class RoomData {
         return number;
     }
 
-    public void setNumber(String number) {
-
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

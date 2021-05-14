@@ -10,7 +10,6 @@
         display: block;
     }
 </style>
-
 <head>
     <title>Edit Rooms</title>
 </head>
@@ -23,8 +22,9 @@
             </c:forEach>
             <form action="<%=request.getContextPath()%>/home/rooms/edit" method="post">
                 <input type="hidden" name="deleted" value="${row}"/>
-                <input type="image"  src="${pageContext.request.contextPath}/images/trash.jpg"
-                       name="REMOVE" alt="submit" width="24" height="24"/>
+                <input type="hidden" name="REMOVE"/>
+                <input type="image" src="${pageContext.request.contextPath}/images/trash.jpg"
+                       width="24" height="24" alt="submit"/>
             </form>
         </tr>
     </c:forEach>

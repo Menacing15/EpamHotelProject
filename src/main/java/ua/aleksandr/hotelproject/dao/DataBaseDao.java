@@ -144,7 +144,14 @@ public class DataBaseDao {
         }
     }
 
-    public void deleteRoom(String deleted) {
+    public void deleteRoom(int number) {
+        try (PreparedStatement preparedStatement = connector.getConnection().
+                prepareStatement("DELETE FROM rooms WHERE number = ?")) {
+            preparedStatement.setInt(1, number);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            printException(e);
+        }
 
     }
 }
