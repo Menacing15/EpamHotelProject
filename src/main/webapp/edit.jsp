@@ -7,7 +7,7 @@
         border-collapse: collapse;
     }
     form {
-        display: block;
+        display: inline-block;
     }
 </style>
 <head>
@@ -15,19 +15,28 @@
 </head>
 <body>
 <table>
-    <c:forEach items="${table}" var="row">
-        <tr>
-            <c:forEach items="${row}" var="element">
-                <td>${element}</td>
+    <tr>
+        <c:forEach items="${columns}" var="column">
+            <td>${column}</td>
+        </c:forEach>
+    </tr>
+    <c:choose>
+        <c:when test='<%=(request.getAttribute("table") != null)%>'>
+            <c:forEach items="${table}" var="row">
+                <tr>
+                    <c:forEach items="${row}" var="element">
+                        <td>${element}</td>
+                    </c:forEach>
+                    <td><form action="<%=request.getContextPath()%>/home/rooms/edit" method="post">
+                        <input type="hidden" name="deleted" value="${row}"/>
+                        <input type="hidden" name="REMOVE"/>
+                        <input type="image" src="${pageContext.request.contextPath}/images/trash.jpg"
+                               width="16" height="16" alt="submit"/>
+                    </form></td>
+                </tr>
             </c:forEach>
-            <form action="<%=request.getContextPath()%>/home/rooms/edit" method="post">
-                <input type="hidden" name="deleted" value="${row}"/>
-                <input type="hidden" name="REMOVE"/>
-                <input type="image" src="${pageContext.request.contextPath}/images/trash.jpg"
-                       width="24" height="24" alt="submit"/>
-            </form>
-        </tr>
-    </c:forEach>
+        </c:when>
+    </c:choose>
 </table>
 <p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms</a></p>
 </body>

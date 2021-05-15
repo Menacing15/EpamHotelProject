@@ -17,4 +17,5 @@
     </c:otherwise>
 </c:choose>
 </body>
+<%@ include file="logout.jsp" %>
 </html>

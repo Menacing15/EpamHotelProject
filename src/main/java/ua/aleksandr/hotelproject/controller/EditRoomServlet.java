@@ -20,11 +20,18 @@ public class EditRoomServlet extends HttpServlet {
         dao = (DataBaseDao) req.getSession().getAttribute("dao");
 
         List<List<String>> result = buildTable();
+        List<String> columns = new ArrayList<>(dao.getColumnNames("rooms"));
+        req.setAttribute("columns", columns);
 
-        if (result.get(0).isEmpty()) {
+
+        if (result.size() != 0) {
+            if (result.get(0).isEmpty()) {
+                req.setAttribute("table", null);
+            } else {
+                req.setAttribute("table", result);
+            }
+        }else {
             req.setAttribute("table", null);
-        } else {
-            req.setAttribute("table", result);
         }
         req.getRequestDispatcher("/edit.jsp").forward(req, resp);
     }
@@ -51,12 +58,10 @@ public class EditRoomServlet extends HttpServlet {
         List<List<String>> result = new ArrayList<>();
 
         List<RoomData> tableData = dao.getTableData();
-        List<String> columns = new ArrayList<>(dao.getColumnNames("rooms"));
 
-        result.add(columns);
 
         for (RoomData data : tableData) {
-            List<String> row = new ArrayList<>(columns.size());
+            List<String> row = new ArrayList<>();
             result.add(row);
 
             row.add(Integer.toString(data.getNumber()));
