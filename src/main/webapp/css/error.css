@@ -1,0 +1,7 @@
+body {
+    color: bisque;
+    font-size: 72px;
+    text-align: center;
+    background-image: url(../images/error.jpg);
+    font-family: HelveticaNeueCyr, cursive;
+}

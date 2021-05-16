@@ -23,6 +23,7 @@ public class LoginFilter implements Filter {
 
         String loginURI = httpRequest.getContextPath() + "/login";
         boolean isLoginRequest = httpRequest.getRequestURI().equals(loginURI);
+
         String registerURI  = httpRequest.getContextPath() + "/register";
         boolean isRegisterRequest = httpRequest.getRequestURI().equals(registerURI);
 
@@ -33,7 +34,7 @@ public class LoginFilter implements Filter {
 
         if (isLoggedIn && (isLoginRequest || isLoginPage)) {
             resp.sendRedirect("home");
-        } else if (isLoggedIn || isLoginRequest || isRegisterRequest || isResource) {
+        } else if (isLoggedIn || isLoginPage || isLoginRequest || isRegisterRequest || isResource) {
             chain.doFilter(req, res);
         } else {
             resp.sendRedirect("login");

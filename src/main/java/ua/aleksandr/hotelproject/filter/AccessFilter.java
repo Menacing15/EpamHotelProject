@@ -8,26 +8,27 @@ import java.io.IOException;
 
 public class AccessFilter implements Filter {
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException { }
+    public void init(FilterConfig filterConfig) throws ServletException {
+    }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
-        HttpServletResponse resp = (HttpServletResponse)servletResponse;
+        HttpServletResponse resp = (HttpServletResponse) servletResponse;
         HttpSession session = req.getSession(false);
 
-        boolean isLoggedIn = (session != null && session.getAttribute("role") != null);
-        String orderURI  = req.getContextPath() + "/orders";
-        boolean isOrderRequest = req.getRequestURI().equals(orderURI);
+        String editURI = req.getContextPath() + "/edit";
+        boolean isEditRequest = req.getRequestURI().equals(editURI);
 
-        if(isLoggedIn) {
-            boolean isAdmin = session.getAttribute("role").equals("admin");
-            if(!isAdmin && isOrderRequest) {
-                req.setAttribute("error", "ACCESS RESTRICTED");
-                req.getRequestDispatcher("error.jsp").forward(req,resp);
-            }else {
-                filterChain.doFilter(req, servletResponse);
-            }
+        boolean isEditPage = req.getRequestURI().endsWith("edit");
+
+        boolean isAdmin = session.getAttribute("role").equals("admin");
+
+        if (!isAdmin && (isEditRequest || isEditPage)) {
+            req.setAttribute("error", "ACCESS RESTRICTED");
+            req.getRequestDispatcher("/error.jsp").forward(req, resp);
+        } else {
+            filterChain.doFilter(req, servletResponse);
         }
     }
 
