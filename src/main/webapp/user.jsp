@@ -7,7 +7,7 @@
 <body>
 <h2>Please choose most convenient option for booking the room.</h2>
 <p>
-    <a href="${pageContext.request.contextPath}/home/rooms">Choose room independently</a>
+    <a href="${pageContext.request.contextPath}/home/rooms/choose">Choose room independently</a>
     <br>
     <a href="${pageContext.request.contextPath}/home/orders">Leave order</a>
 </p>

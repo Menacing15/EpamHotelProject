@@ -8,13 +8,10 @@
 <body>
 <c:choose>
     <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
-        <a href = "${pageContext.request.contextPath}/form.jsp" >Add room</a>
+        <a href = "${pageContext.request.contextPath}/home/rooms/add" >Add room</a>
         <br>
         <a href = "${pageContext.request.contextPath}/home/rooms/edit" >Update room</a>
     </c:when>
-    <c:otherwise>
-        user rooms
-    </c:otherwise>
 </c:choose>
 </body>
 <%@ include file="logout.jsp" %>

@@ -75,6 +75,26 @@
         <url-pattern>/home/rooms/edit</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddRoomServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.AddRoomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddRoomServlet</servlet-name>
+        <url-pattern>/home/rooms/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChooseRoomSerlvet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.ChooseRoomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChooseRoomSerlvet</servlet-name>
+        <url-pattern>/home/rooms/choose</url-pattern>
+    </servlet-mapping>
+
     <!--FILTERS-->
     <filter>
         <filter-name>LoginFilter</filter-name>
@@ -95,5 +115,17 @@
         <filter-name>AccessFilter</filter-name>
         <url-pattern>/home/rooms/*</url-pattern>
     </filter-mapping>
+
+    <!--ERROR-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>405</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+
 </web-app>
 

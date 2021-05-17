@@ -19,12 +19,15 @@ public class AccessFilter implements Filter {
 
         String editURI = req.getContextPath() + "/edit";
         boolean isEditRequest = req.getRequestURI().equals(editURI);
-
         boolean isEditPage = req.getRequestURI().endsWith("edit");
+
+        String addURI = req.getContextPath() + "/add";
+        boolean isAddRequest = req.getRequestURI().equals(addURI);
+        boolean isAddPage = req.getRequestURI().endsWith("add");
 
         boolean isAdmin = session.getAttribute("role").equals("admin");
 
-        if (!isAdmin && (isEditRequest || isEditPage)) {
+        if (!isAdmin && (isEditRequest || isEditPage || isAddRequest || isAddPage)) {
             req.setAttribute("error", "ACCESS RESTRICTED");
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
         } else {

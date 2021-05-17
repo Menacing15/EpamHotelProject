@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>/home/rooms" method="post">
+<form action="<%=request.getContextPath()%>/home/rooms/add" method="post">
     <table>
         <tr>
             <td>Number</td>
