@@ -10,6 +10,6 @@ public class RoomServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/room_menu.jsp").forward(req, resp);
+        req.getRequestDispatcher("/roomMenu.jsp").forward(req, resp);
     }
 }

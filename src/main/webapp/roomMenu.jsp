@@ -13,6 +13,7 @@
         <a href = "${pageContext.request.contextPath}/home/rooms/edit" >Update room</a>
     </c:when>
 </c:choose>
+<a href = "${pageContext.request.contextPath}/home">Back to menu</a>
 </body>
 <%@ include file="logout.jsp" %>
 </html>

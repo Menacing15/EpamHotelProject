@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: HelveticaNeueCyr, cursive;
+}
+
+h1 {
+    text-shadow: 1px 1px 1px black;
+    font-size: 42px;
+}

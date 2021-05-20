@@ -16,7 +16,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         dao = new DataBaseDao();
         req.getSession().setAttribute("dao", dao);
-        req.getRequestDispatcher("login.jsp").forward(req, resp);
+        req.getRequestDispatcher("loginPage.jsp").forward(req, resp);
     }
 
     @Override
