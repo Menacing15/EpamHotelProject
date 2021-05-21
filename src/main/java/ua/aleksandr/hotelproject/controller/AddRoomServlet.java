@@ -28,8 +28,12 @@ public class AddRoomServlet extends HttpServlet {
             room.setPrice(Integer.parseInt(req.getParameter("price")));
             room.setSize(Integer.parseInt(req.getParameter("size")));
             room.setStatus(req.getParameter("status"));
-            dao.addRoom(room);
-            resp.sendRedirect("rooms");
+            if(dao.addRoom(room)) {
+                req.getSession().setAttribute("newRoom", "Room added");
+            }else {
+                req.getSession().setAttribute("newRoom", "Room cannot be added");
+            }
+            resp.sendRedirect("add");
         }
     }
 }

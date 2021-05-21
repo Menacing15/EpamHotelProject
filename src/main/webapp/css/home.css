@@ -5,7 +5,8 @@ body {
     font-size: 32px;
 }
 h2 {
-    font-size: 42px;
+    font-size: 48px;
+    text-shadow: 2px 2px 2px black;
 }
 form {
     align-self: center;

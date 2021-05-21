@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
 <body>
+<h1>Add room</h1>
 <form action="<%=request.getContextPath()%>/home/rooms/add" method="post">
     <table>
         <tr>
@@ -53,6 +54,8 @@
     </table>
     <br>
     <input type="submit" name = "CREATE" value="Create room"/>
+    <br>
+    <span><%=(request.getSession().getAttribute("newRoom") == null) ? "" : request.getSession().getAttribute("newRoom")%></span>
     <br>
     <p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms</a></p>
 </form>

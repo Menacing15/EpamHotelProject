@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css"/>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/home/rooms/choose" style="color: bisque">Choose room independently</a>
+<br>
 <a href="${pageContext.request.contextPath}/home/rooms/add" style="color: bisque">Add room</a>
 <br>
 <a href="${pageContext.request.contextPath}/home/rooms/edit" style="color: bisque">Update room</a>
