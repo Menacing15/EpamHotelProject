@@ -6,14 +6,12 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css"/>
 </head>
 <body>
-<c:choose>
-    <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
-        <a href = "${pageContext.request.contextPath}/home/rooms/add" >Add room</a>
-        <br>
-        <a href = "${pageContext.request.contextPath}/home/rooms/edit" >Update room</a>
-    </c:when>
-</c:choose>
-<a href = "${pageContext.request.contextPath}/home">Back to menu</a>
+<a href="${pageContext.request.contextPath}/home/rooms/add" style="color: bisque">Add room</a>
+<br>
+<a href="${pageContext.request.contextPath}/home/rooms/edit" style="color: bisque">Update room</a>
+<br>
+<br>
+<a href="${pageContext.request.contextPath}/home" style="color: bisque">Back to menu</a>
 </body>
-<%@ include file="logout.jsp" %>
+<%@ include file="loginlogout.jsp" %>
 </html>

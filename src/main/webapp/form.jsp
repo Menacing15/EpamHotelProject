@@ -56,6 +56,6 @@
     <br>
     <p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms</a></p>
 </form>
-<%@ include file="logout.jsp" %>
+<%@ include file="loginlogout.jsp" %>
 </body>
 </html>

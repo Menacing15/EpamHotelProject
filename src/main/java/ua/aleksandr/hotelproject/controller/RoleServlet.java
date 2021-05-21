@@ -19,7 +19,7 @@ public class RoleServlet extends HttpServlet {
         if(role.equals("admin"))
             req.getRequestDispatcher("admin.jsp").forward(req,resp);
         else if(role.equals("user") || role.equals("guest"))
-            req.getRequestDispatcher("user.jsp").forward(req,resp);
+            req.getRequestDispatcher("home.jsp").forward(req,resp);
 
     }
 }

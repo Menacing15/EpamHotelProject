@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Epam Hotel</title>
-  <link rel="stylesheet" href= "${pageContext.request.contextPath}/css/log.css"/>
+  <link rel="stylesheet" href= "${pageContext.request.contextPath}/css/form.css"/>
 </head>
 
 <body>

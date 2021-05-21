@@ -1,7 +1,14 @@
 body {
+    color: bisque;
+    background-image: url(../images/bg.jpg);
     font-family: HelveticaNeueCyr, cursive;
-    font-size: 24px;
+    font-size: 32px;
 }
 h2 {
-    font-size: 36px;
+    font-size: 42px;
+}
+form {
+    align-self: center;
+    alignment: center;
+    display: inline-block;
 }

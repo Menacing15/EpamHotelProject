@@ -40,5 +40,5 @@
 </table>
 <p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms</a></p>
 </body>
-<%@ include file="logout.jsp" %>
+<%@ include file="loginlogout.jsp" %>
 </html>

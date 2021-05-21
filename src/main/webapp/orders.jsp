@@ -6,4 +6,5 @@
 <body>
 orders
 </body>
+<%@ include file="loginlogout.jsp" %>
 </html>
