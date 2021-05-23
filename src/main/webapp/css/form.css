@@ -8,6 +8,10 @@ h1 {
     text-shadow: 4px 4px 2px black;
     font-size: 84px;
 }
+h2 {
+    text-shadow: 3px 3px 2px black;
+    font-size: 60px;
+}
 form {
     display: inline-block;
 }

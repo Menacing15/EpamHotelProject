@@ -99,7 +99,18 @@
         <url-pattern>/home/rooms/choose</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UpdateRoomServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.UpdateRoomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateRoomServlet</servlet-name>
+        <url-pattern>/home/rooms/edit/update</url-pattern>
+    </servlet-mapping>
+
     <!--FILTERS-->
+
     <!--<filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>ua.aleksandr.hotelproject.filter.LoginFilter</filter-class>
@@ -121,6 +132,7 @@
     </filter-mapping>
 
     <!--ERROR-->
+
     <error-page>
         <error-code>404</error-code>
         <location>/error.jsp</location>

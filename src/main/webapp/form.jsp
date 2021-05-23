@@ -57,7 +57,7 @@
     <br>
     <span><%=(request.getSession().getAttribute("newRoom") == null) ? "" : request.getSession().getAttribute("newRoom")%></span>
     <br>
-    <p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms</a></p>
+    <p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms menu</a></p>
 </form>
 <%@ include file="loginlogout.jsp" %>
 </body>

@@ -30,7 +30,7 @@ public class EditRoomServlet extends HttpServlet {
             } else {
                 req.setAttribute("table", result);
             }
-        }else {
+        } else {
             req.setAttribute("table", null);
         }
         req.getRequestDispatcher("/edit.jsp").forward(req, resp);
@@ -44,6 +44,10 @@ public class EditRoomServlet extends HttpServlet {
             int number = createRoomData(values);
             dao.deleteRoom(number);
             resp.sendRedirect("edit");
+        }
+        if (req.getParameter("EDIT") != null) {
+            req.getSession().setAttribute("edited", req.getParameter("edited"));
+            resp.sendRedirect("edit/update");
         }
     }
 

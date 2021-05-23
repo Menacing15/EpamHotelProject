@@ -154,4 +154,15 @@ public class DataBaseDao {
         }
 
     }
+
+    public void updateRoom(String row) {
+        int number = 0;
+        try (PreparedStatement preparedStatement = connector.getConnection().
+                prepareStatement("UPDATE rooms SET WHERE number = ?")) {
+            preparedStatement.setInt(1, number);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            printException(e);
+        }
+    }
 }
