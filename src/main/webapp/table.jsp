@@ -9,7 +9,7 @@
 <table>
     <tr>
         <c:forEach items="${columns}" var="column">
-            <td><form action="<%=request.getContextPath()%>/home/rooms/edit" method="post">
+            <td><form action="<%=request.getContextPath()%>/home/rooms/table" method="post">
                 <input type="hidden" name="ordered" value="${column}"/>
                 <input type="submit" name = "ORDER" value="${column}"/>
             </form></td>
@@ -23,19 +23,23 @@
                         <td>${element}</td>
                     </c:forEach>
 
-                    <td><form action="<%=request.getContextPath()%>/home/rooms/edit" method="post">
+                    <c:choose>
+                        <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
+                    <td><form action="<%=request.getContextPath()%>/home/rooms/table" method="post">
                         <input type="hidden" name="deleted" value="${row}"/>
                         <input type="hidden" name="REMOVE"/>
                         <input type="image" src="${pageContext.request.contextPath}/images/trash.png"
                                width="16" height="16" alt="submit"/>
                     </form></td>
                     <td>
-                        <form action="<%=request.getContextPath()%>/home/rooms/edit" method="post">
+                        <form action="<%=request.getContextPath()%>/home/rooms/table" method="post">
                             <input type="hidden" name="edited" value="${row}"/>
                             <input type="hidden" name="EDIT"/>
                             <input type="submit" value="Edit"/>
                         </form>
                     </td>
+                        </c:when>
+                    </c:choose>
                 </tr>
             </c:forEach>
         </c:when>

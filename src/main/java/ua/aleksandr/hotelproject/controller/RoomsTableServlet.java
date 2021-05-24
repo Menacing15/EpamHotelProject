@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditRoomServlet extends HttpServlet {
+public class RoomsTableServlet extends HttpServlet {
 
     private DataBaseDao dao;
 
@@ -38,7 +38,7 @@ public class EditRoomServlet extends HttpServlet {
         } else {
             req.setAttribute("table", null);
         }
-        req.getRequestDispatcher("/edit.jsp").forward(req, resp);
+        req.getRequestDispatcher("/table.jsp").forward(req, resp);
     }
 
 
@@ -48,11 +48,11 @@ public class EditRoomServlet extends HttpServlet {
             String values = req.getParameter("deleted");
             int number = createRoomData(values);
             dao.deleteRoom(number);
-            resp.sendRedirect("edit");
+            resp.sendRedirect("table");
         }
         if (req.getParameter("EDIT") != null) {
             req.getSession().setAttribute("edited", req.getParameter("edited"));
-            resp.sendRedirect("edit/update");
+            resp.sendRedirect("table/update");
         }
         if (req.getParameter("ORDER") != null) {
             doGet(req, resp);

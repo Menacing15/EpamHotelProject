@@ -20,12 +20,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>RoleServlet</servlet-name>
-        <servlet-class>ua.aleksandr.hotelproject.controller.RoleServlet</servlet-class>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.HomeServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>RoleServlet</servlet-name>
+        <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
 
@@ -70,13 +70,13 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>EditRoomServlet</servlet-name>
-        <servlet-class>ua.aleksandr.hotelproject.controller.EditRoomServlet</servlet-class>
+        <servlet-name>RoomsTableServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.RoomsTableServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>EditRoomServlet</servlet-name>
-        <url-pattern>/home/rooms/edit</url-pattern>
+        <servlet-name>RoomsTableServlet</servlet-name>
+        <url-pattern>/home/rooms/table</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -87,16 +87,6 @@
     <servlet-mapping>
         <servlet-name>AddRoomServlet</servlet-name>
         <url-pattern>/home/rooms/add</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>ChooseRoomSerlvet</servlet-name>
-        <servlet-class>ua.aleksandr.hotelproject.controller.ChooseRoomServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ChooseRoomSerlvet</servlet-name>
-        <url-pattern>/home/rooms/choose</url-pattern>
     </servlet-mapping>
 
     <servlet>

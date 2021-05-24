@@ -7,9 +7,9 @@
 <body>
 <h2>ADMIN PAGE</h2>
 <p>
-    <a href="${pageContext.request.contextPath}/home/rooms" style="color: bisque">Rooms</a>
+    <a href="${pageContext.request.contextPath}/home/rooms" style="color: bisque">Go to room's menu</a>
     <br>
-    <a href="${pageContext.request.contextPath}/home/orders" style="color: bisque">Orders</a>
+    <a href="${pageContext.request.contextPath}/home/orders" style="color: bisque">Go to customer's orders</a>
 </p>
 </body>
 <%@ include file="loginlogout.jsp" %>
