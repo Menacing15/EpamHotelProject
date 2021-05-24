@@ -9,7 +9,10 @@
 <table>
     <tr>
         <c:forEach items="${columns}" var="column">
-            <td>${column}</td>
+            <td><form action="<%=request.getContextPath()%>/home/rooms/edit" method="post">
+                <input type="hidden" name="ordered" value="${column}"/>
+                <input type="submit" name = "ORDER" value="${column}"/>
+            </form></td>
         </c:forEach>
     </tr>
     <c:choose>

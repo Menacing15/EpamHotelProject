@@ -99,10 +99,10 @@ public class DataBaseDao {
         return set;
     }
 
-    public List<RoomData> getTableData() {
+    public List<RoomData> getTableData(String orderParameter) {
         List<RoomData> result = new ArrayList<>();
         try (PreparedStatement statement =
-                     connector.getConnection().prepareStatement("SELECT * FROM rooms")) {
+                     connector.getConnection().prepareStatement("SELECT * FROM rooms ORDER BY " + orderParameter)) {
             ResultSet resultSet = statement.executeQuery();
             RoomData room;
             while (resultSet.next()) {

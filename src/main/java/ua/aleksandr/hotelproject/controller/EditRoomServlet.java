@@ -19,10 +19,15 @@ public class EditRoomServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         dao = (DataBaseDao) req.getSession().getAttribute("dao");
 
-        List<List<String>> result = buildTable();
+        List<List<String>> result;
         List<String> columns = new ArrayList<>(dao.getColumnNames("rooms"));
         req.setAttribute("columns", columns);
 
+        if(req.getParameter("ordered") != null) {
+            result = buildTable(req.getParameter("ordered"));
+        }else {
+            result = buildTable();
+        }
 
         if (result.size() != 0) {
             if (result.get(0).isEmpty()) {
@@ -49,6 +54,9 @@ public class EditRoomServlet extends HttpServlet {
             req.getSession().setAttribute("edited", req.getParameter("edited"));
             resp.sendRedirect("edit/update");
         }
+        if (req.getParameter("ORDER") != null) {
+            doGet(req, resp);
+        }
     }
 
     private int createRoomData(String values) {
@@ -58,10 +66,10 @@ public class EditRoomServlet extends HttpServlet {
         return Integer.parseInt(data[0]);
     }
 
-    private List<List<String>> buildTable() {
+    private List<List<String>> buildTable(String orderParameter) {
         List<List<String>> result = new ArrayList<>();
 
-        List<RoomData> tableData = dao.getTableData();
+        List<RoomData> tableData = dao.getTableData(orderParameter);
 
 
         for (RoomData data : tableData) {
@@ -77,4 +85,7 @@ public class EditRoomServlet extends HttpServlet {
         return result;
     }
 
+    private List<List<String>> buildTable() {
+        return buildTable("number");
+    }
 }
