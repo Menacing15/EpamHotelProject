@@ -155,11 +155,17 @@ public class DataBaseDao {
 
     }
 
-    public void updateRoom(String row) {
-        int number = 0;
+    public void updateRoom(String[] data) {
+        int number = Integer.parseInt(data[0]);
+        String type = data[1];
+        int price = Integer.parseInt(data[2]);
+        String status = data[3];
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("UPDATE rooms SET WHERE number = ?")) {
-            preparedStatement.setInt(1, number);
+                prepareStatement("UPDATE rooms SET type = ?, price = ?, status = ? WHERE number = ?")) {
+            preparedStatement.setString(1, type);
+            preparedStatement.setInt(2, price);
+            preparedStatement.setString(3, status);
+            preparedStatement.setInt(4, number);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             printException(e);

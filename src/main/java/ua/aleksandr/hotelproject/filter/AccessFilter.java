@@ -17,17 +17,15 @@ public class AccessFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
         HttpSession session = req.getSession(false);
 
-        String editURI = req.getContextPath() + "/edit";
-        boolean isEditRequest = req.getRequestURI().equals(editURI);
         boolean isEditPage = req.getRequestURI().endsWith("edit");
 
-        String addURI = req.getContextPath() + "/add";
-        boolean isAddRequest = req.getRequestURI().equals(addURI);
         boolean isAddPage = req.getRequestURI().endsWith("add");
+
+        boolean isUpdatePage = req.getRequestURI().endsWith("update");
 
         boolean isAdmin = session.getAttribute("role").equals("admin");
 
-        if (!isAdmin && (isEditRequest || isEditPage || isAddRequest || isAddPage)) {
+        if (!isAdmin && (isEditPage || isAddPage || isUpdatePage)) {
             req.setAttribute("error", "ACCESS RESTRICTED");
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
         } else {
