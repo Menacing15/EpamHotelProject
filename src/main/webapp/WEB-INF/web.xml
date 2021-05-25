@@ -60,22 +60,22 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>OrderServlet</servlet-name>
-        <servlet-class>ua.aleksandr.hotelproject.controller.OrderServlet</servlet-class>
+        <servlet-name>BookingServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.BookingServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>OrderServlet</servlet-name>
-        <url-pattern>/home/orders</url-pattern>
+        <servlet-name>BookingServlet</servlet-name>
+        <url-pattern>/home/order</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>RoomsTableServlet</servlet-name>
-        <servlet-class>ua.aleksandr.hotelproject.controller.RoomsTableServlet</servlet-class>
+        <servlet-name>TableServlet</servlet-name>
+        <servlet-class>ua.aleksandr.hotelproject.controller.TableServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>RoomsTableServlet</servlet-name>
+        <servlet-name>TableServlet</servlet-name>
         <url-pattern>/home/rooms/table</url-pattern>
     </servlet-mapping>
 

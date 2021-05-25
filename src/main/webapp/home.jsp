@@ -10,7 +10,7 @@
 <p>
     <a href="${pageContext.request.contextPath}/home/rooms/table" style="color: bisque">Rooms</a>
     <br>
-    <a href="${pageContext.request.contextPath}/home/orders" style="color: bisque">Leave order</a>
+    <a href="${pageContext.request.contextPath}/home/order" style="color: bisque">Leave order</a>
 </p>
 </body>
 <%@ include file="loginlogout.jsp" %>

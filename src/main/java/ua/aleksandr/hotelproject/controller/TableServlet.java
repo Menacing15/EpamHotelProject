@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RoomsTableServlet extends HttpServlet {
+public class TableServlet extends HttpServlet {
 
     private DataBaseDao dao;
 
@@ -53,6 +53,11 @@ public class RoomsTableServlet extends HttpServlet {
         if (req.getParameter("EDIT") != null) {
             req.getSession().setAttribute("edited", req.getParameter("edited"));
             resp.sendRedirect("table/update");
+        }
+
+        if (req.getParameter("CHOOSE") != null) {
+            req.getSession().setAttribute("chosen", req.getParameter("chosen"));
+            resp.sendRedirect(req.getContextPath() + "/home/order");
         }
         if (req.getParameter("ORDER") != null) {
             doGet(req, resp);

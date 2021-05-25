@@ -19,6 +19,7 @@ public class UpdateRoomServlet extends HttpServlet {
 
         setRoomAttributes(req, edited);
         req.getRequestDispatcher("/update.jsp").forward(req, resp);
+        req.getSession().removeAttribute("edited");
     }
 
     @Override
@@ -32,7 +33,7 @@ public class UpdateRoomServlet extends HttpServlet {
             dataToUpdate[3] = req.getParameter("status");
             dao.updateRoom(dataToUpdate);
         }
-        resp.sendRedirect("/hotel/home/rooms/edit");
+        resp.sendRedirect(req.getContextPath() + "/home/rooms/edit");
     }
 
     private void setRoomAttributes(HttpServletRequest req, String edited) {

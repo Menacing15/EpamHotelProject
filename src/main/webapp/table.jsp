@@ -23,6 +23,12 @@
                         <td>${element}</td>
                     </c:forEach>
 
+                    <td><form action="<%=request.getContextPath()%>/home/rooms/table" method="post">
+                        <input type="hidden" name="chosen" value="${row}"/>
+                        <input type="hidden" name="CHOOSE"/>
+                        <input type="submit" value="Book"/>
+                    </form></td>
+
                     <c:choose>
                         <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
                     <td><form action="<%=request.getContextPath()%>/home/rooms/table" method="post">
@@ -45,7 +51,14 @@
         </c:when>
     </c:choose>
 </table>
-<p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms menu</a></p>
+<c:choose>
+    <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
+        <p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms menu</a></p>
+    </c:when>
+    <c:otherwise>
+        <p><a href = "${pageContext.request.contextPath}/home">Back to menu</a></p>
+    </c:otherwise>
+</c:choose>
 </body>
 <%@ include file="loginlogout.jsp" %>
 </html>

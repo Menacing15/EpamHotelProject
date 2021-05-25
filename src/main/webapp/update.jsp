@@ -40,7 +40,7 @@
     <input type="hidden" name = "number" value="<%=request.getAttribute("number")%>"/>
     <input type="submit" name = "UPDATE" value="Update"/>
     <br>
-    <p><a href = "${pageContext.request.contextPath}/home/rooms/edit">Back to table</a></p>
+    <p><a href = "${pageContext.request.contextPath}/home/rooms/table">Back to table</a></p>
 </form>
 </body>
 <%@ include file="loginlogout.jsp" %>

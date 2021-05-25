@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css"/>
 </head>
 <body>
+<h2>Rooms menu, admin only please :)</h2>
 <a href="${pageContext.request.contextPath}/home/rooms/table" style="color: bisque">Rooms</a>
 <br>
 <a href="${pageContext.request.contextPath}/home/rooms/add" style="color: bisque">Add room</a>
