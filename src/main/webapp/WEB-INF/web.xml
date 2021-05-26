@@ -4,6 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <context-param>
+        <param-name>log4j</param-name>
+        <param-value>WEB-INF/classes/log4j.properties</param-value>
+    </context-param>
+
     <welcome-file-list>
         <welcome-file>/welcome.jsp</welcome-file>
     </welcome-file-list>
@@ -124,18 +129,23 @@
     <!--ERROR-->
 
     <error-page>
+        <exception-type>java.lang.Throwable</exception-type >
+        <location>/error</location>
+    </error-page>
+
+    <error-page>
         <error-code>404</error-code>
-        <location>/error.jsp</location>
+        <location>/error</location>
     </error-page>
 
     <error-page>
         <error-code>405</error-code>
-        <location>/error.jsp</location>
+        <location>/error</location>
     </error-page>
 
     <error-page>
         <error-code>500</error-code>
-        <location>/error.jsp</location>
+        <location>/error</location>
     </error-page>
 
 </web-app>
