@@ -1,1 +1,10 @@
 FATAL   2021-05-26 17:38:11,965 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-27 14:34:02,134 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-27 14:34:07,603 [http-bio-8080-exec-9] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-27 14:46:50,304 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-05-27 14:46:50,306 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-27 14:47:07,826 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-05-27 14:47:07,827 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-27 14:47:37,577 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-05-27 14:47:37,579 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-28 16:07:38,185 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404

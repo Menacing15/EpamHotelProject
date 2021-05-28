@@ -1,5 +1,7 @@
 package ua.aleksandr.hotelproject.controller;
 
+import ua.aleksandr.hotelproject.dao.DataBaseDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +13,9 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        DataBaseDao dao = new DataBaseDao();
+        req.getSession().setAttribute("dao", dao);
+
         if(req.getSession().getAttribute("role") == null)
             req.getSession().setAttribute("role", "guest");
 

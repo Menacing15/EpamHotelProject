@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Update room <%=request.getSession().getAttribute("edited")%></h2>
-<form action="<%=request.getContextPath()%>/home/rooms/edit/update" method="post">
+<form action="<%=request.getContextPath()%>/home/rooms/table/update" method="post">
     <table>
         <tr>
             <td>Type</td>

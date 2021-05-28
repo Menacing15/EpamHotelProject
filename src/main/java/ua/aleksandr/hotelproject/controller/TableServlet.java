@@ -57,7 +57,7 @@ public class TableServlet extends HttpServlet {
 
         if (req.getParameter("CHOOSE") != null) {
             req.getSession().setAttribute("chosen", req.getParameter("chosen"));
-            resp.sendRedirect(req.getContextPath() + "/home/order");
+            resp.sendRedirect(req.getContextPath() + "/home/book");
         }
         if (req.getParameter("ORDER") != null) {
             doGet(req, resp);

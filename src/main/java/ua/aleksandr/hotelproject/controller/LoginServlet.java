@@ -11,11 +11,7 @@ import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
 
-    private DataBaseDao dao;
-
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        dao = new DataBaseDao();
-        req.getSession().setAttribute("dao", dao);
         req.getRequestDispatcher("loginPage.jsp").forward(req, resp);
     }
 
@@ -23,6 +19,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+
+        DataBaseDao dao = new DataBaseDao();
 
         LoginData loginData = new LoginData();
 

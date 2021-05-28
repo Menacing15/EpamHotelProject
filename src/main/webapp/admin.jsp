@@ -9,7 +9,7 @@
 <p>
     <a href="${pageContext.request.contextPath}/home/rooms" style="color: bisque">Go to room's menu</a>
     <br>
-    <a href="${pageContext.request.contextPath}/home/order" style="color: bisque">Go to customer's orders</a>
+    <a href="${pageContext.request.contextPath}/home/book" style="color: bisque">Go to customer's orders</a>
 </p>
 </body>
 <%@ include file="loginlogout.jsp" %>

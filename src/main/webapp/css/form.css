@@ -23,6 +23,10 @@ table {
 input {
     font-size: 24px;
 }
+label {
+    font-size: 24px;
+    text-shadow: black;
+}
 select {
     font-size: 24px;
 }
