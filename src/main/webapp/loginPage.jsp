@@ -30,5 +30,6 @@
   </form>
   <br>
   <p><a href = "${pageContext.request.contextPath}/register">I am new customer</a></p>
+  <p><a href = "${pageContext.request.contextPath}/home">Be a guest for now</a></p>
 </body>
 </html>

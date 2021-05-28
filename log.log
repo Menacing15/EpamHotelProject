@@ -8,3 +8,10 @@ FATAL   2021-05-27 14:47:07,827 [http-bio-8080-exec-4] ua.aleksandr.hotelproject
 FATAL   2021-05-27 14:47:37,577 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
 FATAL   2021-05-27 14:47:37,579 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
 FATAL   2021-05-28 16:07:38,185 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-28 23:01:06,099 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-05-28 23:01:06,100 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-28 23:28:04,043 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-05-28 23:28:04,045 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-28 23:30:00,898 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: Cannot forward after response has been committed
+FATAL   2021-05-28 23:30:00,901 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-28 23:35:52,421 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
