@@ -16,15 +16,15 @@ public class HomeServlet extends HttpServlet {
         DataBaseDao dao = new DataBaseDao();
         req.getSession().setAttribute("dao", dao);
 
-        if(req.getSession().getAttribute("role") == null)
+        if (req.getSession().getAttribute("role") == null)
             req.getSession().setAttribute("role", "guest");
 
         HttpSession session = req.getSession();
-        String role =  (String) session.getAttribute("role");
-        if(role.equals("admin"))
-            req.getRequestDispatcher("admin.jsp").forward(req,resp);
-        else if(role.equals("user") || role.equals("guest"))
-            req.getRequestDispatcher("home.jsp").forward(req,resp);
+        String role = (String) session.getAttribute("role");
+        if (role.equals("admin"))
+            req.getRequestDispatcher("admin.jsp").forward(req, resp);
+        else if (role.equals("user") || role.equals("guest"))
+            req.getRequestDispatcher("home.jsp").forward(req, resp);
 
     }
 }

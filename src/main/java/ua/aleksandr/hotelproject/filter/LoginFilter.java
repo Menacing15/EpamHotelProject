@@ -20,7 +20,7 @@ public class LoginFilter implements Filter {
         HttpSession session = httpRequest.getSession(false);
 
         String role = (String) session.getAttribute("role");
-        if(role != null) {
+        if (role != null) {
 
             boolean isGuest = (role.equals("guest"));
 

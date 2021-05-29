@@ -10,7 +10,7 @@ public class BookingServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(req.getSession().getAttribute("chosen") != null){
+        if (req.getSession().getAttribute("chosen") != null) {
             req.getRequestDispatcher("/bookRoom.jsp").forward(req, resp);
         } else {
             req.getRequestDispatcher("/requestRoom.jsp").forward(req, resp);

@@ -8,6 +8,6 @@
 <h1>EPAM University Program</h1>
 <br>
 <h1>Theme of the project: Hotel</h1>
-<h1><a href = "${pageContext.request.contextPath}/home">Let's try</a></h1>
+<h1><a href="${pageContext.request.contextPath}/home">Let's try</a></h1>
 </body>
 </html>

@@ -18,9 +18,10 @@ public class ErrorHandler extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Throwable throwable = (Throwable) req.getAttribute("javax.servlet.error.exception");
         Integer statusCode = (Integer) req.getAttribute("javax.servlet.error.status_code");
-        if(throwable != null) {
+        if (throwable != null) {
             LOGGER.fatal("Exception: " + throwable.getMessage());
-        }if (statusCode != null) {
+        }
+        if (statusCode != null) {
             LOGGER.fatal("Error, status code: " + statusCode);
         }
         req.getRequestDispatcher("/error.jsp").forward(req, resp);

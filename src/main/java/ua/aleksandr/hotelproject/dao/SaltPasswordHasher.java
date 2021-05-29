@@ -4,8 +4,8 @@ import java.security.NoSuchAlgorithmException;
 
 public interface SaltPasswordHasher {
 
-     String hash(String password, byte[] salt);
+    String hash(String password, byte[] salt);
 
-     byte[] getSalt() throws NoSuchAlgorithmException;
+    byte[] getSalt() throws NoSuchAlgorithmException;
 
 }

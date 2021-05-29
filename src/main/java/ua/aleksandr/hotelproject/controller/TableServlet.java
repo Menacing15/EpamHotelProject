@@ -23,9 +23,9 @@ public class TableServlet extends HttpServlet {
         List<String> columns = new ArrayList<>(dao.getColumnNames("rooms"));
         req.setAttribute("columns", columns);
 
-        if(req.getParameter("ordered") != null) {
+        if (req.getParameter("ordered") != null) {
             result = buildTable(req.getParameter("ordered"));
-        }else {
+        } else {
             result = buildTable();
         }
 

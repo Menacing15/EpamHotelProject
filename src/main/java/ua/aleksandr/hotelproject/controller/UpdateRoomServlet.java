@@ -25,7 +25,7 @@ public class UpdateRoomServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("UPDATE") != null) {
-            String [] dataToUpdate = new String[4];
+            String[] dataToUpdate = new String[4];
 
             dataToUpdate[0] = req.getParameter("number");
             dataToUpdate[1] = req.getParameter("type");

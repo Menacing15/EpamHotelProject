@@ -8,7 +8,7 @@ import java.security.SecureRandom;
 public class SHA512SaltPasswordHasher implements SaltPasswordHasher {
 
     @Override
-    public String hash(String password, byte [] salt){
+    public String hash(String password, byte[] salt) {
         String generatedPassword = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-512");

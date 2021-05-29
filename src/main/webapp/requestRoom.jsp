@@ -11,7 +11,7 @@
         <tr>
             <td>Category</td>
             <td><label>
-                <select  name = "type" required>
+                <select name="type" required>
                     <option>Budget</option>
                     <option>Decent</option>
                     <option>Premium</option>
@@ -21,7 +21,7 @@
         <tr>
             <td>Size</td>
             <td><label>
-                <select  name = "size" required>
+                <select name="size" required>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -44,9 +44,9 @@
             </td>
         </tr>
     </table>
-    <input type="submit" value="Request" />
+    <input type="submit" value="Request"/>
 </form>
-<p><a href = "${pageContext.request.contextPath}/home">Back to homepage</a></p>
+<p><a href="${pageContext.request.contextPath}/home">Back to homepage</a></p>
 </body>
 <%@ include file="loginlogout.jsp" %>
 </html>

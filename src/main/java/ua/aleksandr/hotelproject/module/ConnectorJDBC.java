@@ -25,7 +25,7 @@ public class ConnectorJDBC implements Connector {
         String user;
         String password;
 
-        try (FileReader fileReader = new FileReader("src\\main\\resources\\database.properties")){
+        try (FileReader fileReader = new FileReader("src\\main\\resources\\database.properties")) {
             properties.load(fileReader);
             driver = properties.getProperty("driver");
             database = properties.getProperty("database");
@@ -39,8 +39,7 @@ public class ConnectorJDBC implements Connector {
 
         try {
             Class.forName(driver);
-        }
-        catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException("Please add you PosgreSQL Driver to the project!", e);
         }
 

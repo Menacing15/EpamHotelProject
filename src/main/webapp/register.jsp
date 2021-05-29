@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Registration</title>
-    <link rel="stylesheet" href= "${pageContext.request.contextPath}/css/form.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
 <body>
 <h1>Hotel Registration</h1>
@@ -23,10 +23,10 @@
         </tr>
     </table>
     <br>
-    <input type="submit" value="Register" />
+    <input type="submit" value="Register"/>
     <br>
     <span><%=(request.getSession().getAttribute("regError") == null) ? "" : request.getSession().getAttribute("regError")%></span>
 </form>
-<p><a href = "${pageContext.request.contextPath}/login">I already have an account</a></p>
+<p><a href="${pageContext.request.contextPath}/login">I already have an account</a></p>
 </body>
 </html>

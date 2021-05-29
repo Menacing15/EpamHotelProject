@@ -18,7 +18,7 @@
         <tr>
             <td>Category</td>
             <td><label>
-                <select  name = "type" required>
+                <select name="type" required>
                     <option>Budget</option>
                     <option>Decent</option>
                     <option>Premium</option>
@@ -28,7 +28,7 @@
         <tr>
             <td>Size</td>
             <td><label>
-                <select  name = "size" required>
+                <select name="size" required>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -45,7 +45,7 @@
         <tr>
             <td>Status</td>
             <td><label>
-                <select  name = "status" required>
+                <select name="status" required>
                     <option>Available</option>
                     <option>Taken</option>
                 </select>
@@ -53,11 +53,11 @@
         </tr>
     </table>
     <br>
-    <input type="submit" name = "CREATE" value="Create room"/>
+    <input type="submit" name="CREATE" value="Create room"/>
     <br>
     <span><%=(request.getSession().getAttribute("newRoom") == null) ? "" : request.getSession().getAttribute("newRoom")%></span>
     <br>
-    <p><a href = "${pageContext.request.contextPath}/home/rooms">Back to rooms menu</a></p>
+    <p><a href="${pageContext.request.contextPath}/home/rooms">Back to rooms menu</a></p>
 </form>
 <%@ include file="loginlogout.jsp" %>
 </body>
