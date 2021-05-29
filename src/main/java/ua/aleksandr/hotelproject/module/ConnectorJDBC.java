@@ -11,6 +11,9 @@ public class ConnectorJDBC implements Connector {
 
     private Connection connection;
 
+    private String loginTable;
+    private String roomsTable;
+
     public ConnectorJDBC() {
         connect();
     }
@@ -28,6 +31,8 @@ public class ConnectorJDBC implements Connector {
             database = properties.getProperty("database");
             user = properties.getProperty("user");
             password = properties.getProperty("password");
+            loginTable = properties.getProperty("loginTableName");
+            roomsTable = properties.getProperty("roomsTableName");
         } catch (IOException e) {
             throw new RuntimeException("Can't get property!", e);
         }
@@ -52,5 +57,13 @@ public class ConnectorJDBC implements Connector {
 
     public Connection getConnection() {
         return connection;
+    }
+
+    public String getLoginTable() {
+        return loginTable;
+    }
+
+    public String getRoomsTable() {
+        return roomsTable;
     }
 }

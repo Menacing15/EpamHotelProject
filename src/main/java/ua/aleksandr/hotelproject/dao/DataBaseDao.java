@@ -9,10 +9,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class DataBaseDao {
 
@@ -27,7 +24,7 @@ public class DataBaseDao {
         String givenPassword = loginData.getPassword();
 
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("SELECT * FROM login WHERE username = ?")) {
+                prepareStatement("SELECT * FROM " + connector.getLoginTable() + " WHERE username = ?")) {
 
             preparedStatement.setString(1, loginData.getUsername());
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -61,7 +58,7 @@ public class DataBaseDao {
     public boolean createUser(LoginData loginData) {
         boolean set = false;
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("INSERT INTO login (username, password, salt, role) VALUES (?, ?, ?, ?)")) {
+                prepareStatement("INSERT INTO " + connector.getLoginTable() + " (username, password, salt, role) VALUES (?, ?, ?, ?)")) {
 
             SaltPasswordHasher hasher = new SHA512SaltPasswordHasher();
             byte[] salt = hasher.getSalt();
@@ -83,7 +80,7 @@ public class DataBaseDao {
     public boolean addRoom(RoomData room) {
         boolean set = false;
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("INSERT INTO rooms (number, type, size, price, status) VALUES (?, ?, ?, ?, ?)")) {
+                prepareStatement("INSERT INTO " + connector.getRoomsTable() + " (number, type, size, price, status) VALUES (?, ?, ?, ?, ?)")) {
 
             preparedStatement.setInt(1, room.getNumber());
             preparedStatement.setString(2, room.getType());
@@ -102,7 +99,7 @@ public class DataBaseDao {
     public List<RoomData> getTableData(String orderParameter) {
         List<RoomData> result = new ArrayList<>();
         try (PreparedStatement statement =
-                     connector.getConnection().prepareStatement("SELECT * FROM rooms ORDER BY " + orderParameter)) {
+                     connector.getConnection().prepareStatement("SELECT * FROM " + connector.getRoomsTable() + " ORDER BY " + orderParameter)) {
             ResultSet resultSet = statement.executeQuery();
             RoomData room;
             while (resultSet.next()) {
@@ -146,7 +143,7 @@ public class DataBaseDao {
 
     public void deleteRoom(int number) {
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("DELETE FROM rooms WHERE number = ?")) {
+                prepareStatement("DELETE FROM " + connector.getRoomsTable() + " WHERE number = ?")) {
             preparedStatement.setInt(1, number);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -161,7 +158,7 @@ public class DataBaseDao {
         int price = Integer.parseInt(data[2]);
         String status = data[3];
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("UPDATE rooms SET type = ?, price = ?, status = ? WHERE number = ?")) {
+                prepareStatement("UPDATE " + connector.getRoomsTable() + " SET type = ?, price = ?, status = ? WHERE number = ?")) {
             preparedStatement.setString(1, type);
             preparedStatement.setInt(2, price);
             preparedStatement.setString(3, status);

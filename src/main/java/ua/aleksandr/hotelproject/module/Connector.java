@@ -6,4 +6,8 @@ public interface Connector {
     void connect();
 
     Connection getConnection();
+
+    String getLoginTable();
+
+    String getRoomsTable();
 }
