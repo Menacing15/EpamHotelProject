@@ -33,7 +33,7 @@ public class UpdateRoomServlet extends HttpServlet {
             dataToUpdate[3] = req.getParameter("status");
             dao.updateRoom(dataToUpdate);
         }
-        resp.sendRedirect(req.getContextPath() + "/home/rooms/edit");
+        resp.sendRedirect(req.getContextPath() + "/home/rooms/table");
     }
 
     private void setRoomAttributes(HttpServletRequest req, String edited) {

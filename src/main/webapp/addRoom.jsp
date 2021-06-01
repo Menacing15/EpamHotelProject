@@ -1,22 +1,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Form</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
+<fmt:setBundle basename='<%=(String)request.getSession().getAttribute("bundle")%>'/>
 <body>
 <h1>Add room</h1>
 <form action="<%=request.getContextPath()%>/home/rooms/add" method="post">
     <table>
         <tr>
-            <td>Number</td>
+            <td><fmt:message key = "number"/></td>
             <td><label>
                 <input type="number" name="number" required/>
             </label></td>
         </tr>
         <tr>
-            <td>Category</td>
+            <td><fmt:message key = "category"/></td>
             <td><label>
                 <select name="type" required>
                     <option>Budget</option>
@@ -26,7 +27,7 @@
             </label></td>
         </tr>
         <tr>
-            <td>Size</td>
+            <td><fmt:message key = "size"/></td>
             <td><label>
                 <select name="size" required>
                     <option>1</option>
@@ -37,13 +38,13 @@
             </label></td>
         </tr>
         <tr>
-            <td>Price</td>
+            <td><fmt:message key = "price"/></td>
             <td><label>
                 <input type="number" name="price" required/>
             </label></td>
         </tr>
         <tr>
-            <td>Status</td>
+            <td><fmt:message key = "status"/></td>
             <td><label>
                 <select name="status" required>
                     <option>Available</option>
@@ -57,7 +58,7 @@
     <br>
     <span><%=(request.getSession().getAttribute("newRoom") == null) ? "" : request.getSession().getAttribute("newRoom")%></span>
     <br>
-    <p><a href="${pageContext.request.contextPath}/home/rooms">Back to rooms menu</a></p>
+    <p><a href="${pageContext.request.contextPath}/home/rooms"><fmt:message key = "back.to.rooms.menu"/></a></p>
 </form>
 <%@ include file="loginlogout.jsp" %>
 </body>

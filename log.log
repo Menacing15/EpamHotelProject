@@ -15,3 +15,29 @@ FATAL   2021-05-28 23:28:04,045 [http-bio-8080-exec-6] ua.aleksandr.hotelproject
 FATAL   2021-05-28 23:30:00,898 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: Cannot forward after response has been committed
 FATAL   2021-05-28 23:30:00,901 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
 FATAL   2021-05-28 23:35:52,421 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-30 20:23:04,796 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: /home.jsp (line: 9, column: 28) Attribute value request.getSession().getAttribute("bundle") is quoted with " which must be escaped when used within the value
+FATAL   2021-05-30 20:23:04,798 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-31 06:46:43,863 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: Unable to compile class for JSP: 
+
+An error occurred at line: 9 in the jsp file: /home.jsp
+The method setBasename(String) in the type SetBundleTag is not applicable for the arguments (Object)
+6:     <title>Home</title>
+7:     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css"/>
+8: </head>
+9: <fmt:setBundle basename='<%=request.getSession().getAttribute("bundle")%>'/>
+10: <body>
+11: <h2><fmt:message key = "home.header"/></h2>
+12: <p>
+
+
+Stacktrace:
+FATAL   2021-05-31 06:46:43,865 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-31 06:46:44,010 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-31 20:23:55,890 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-31 20:24:25,716 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-31 20:24:32,102 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-05-31 20:33:29,895 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: /table.jsp (line: 10, column: 0) /switchlang.jsp (line: 3, column: 63) The prefix fmt specified in this tag directive has been previously used by an action in file /table.jsp line 8.
+FATAL   2021-05-31 20:33:29,895 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-31 20:34:45,019 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: /table.jsp (line: 71, column: 0) /loginlogout.jsp (line: 3, column: 67) The prefix fmt specified in this tag directive has been previously used by an action in file /table.jsp line 67.
+FATAL   2021-05-31 20:34:45,019 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-05-31 20:47:33,268 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404

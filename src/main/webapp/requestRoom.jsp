@@ -1,15 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Request for room</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
+<fmt:setBundle basename='<%=(String)request.getSession().getAttribute("bundle")%>'/>
 <body>
-<h2>Please fill up the request form</h2>
+<h2><fmt:message key = "request.header"/></h2>
 <form action="<%=request.getContextPath()%>/home/book" method="post">
     <table>
         <tr>
-            <td>Category</td>
+            <td><fmt:message key = "category"/></td>
             <td><label>
                 <select name="type" required>
                     <option>Budget</option>
@@ -19,7 +21,7 @@
             </label></td>
         </tr>
         <tr>
-            <td>Size</td>
+            <td><fmt:message key = "size"/></td>
             <td><label>
                 <select name="size" required>
                     <option>1</option>
@@ -30,14 +32,14 @@
             </label></td>
         </tr>
         <tr>
-            <td>Arrival date</td>
+            <td><fmt:message key = "arrival.date"/></td>
             <td><label>
                 <input type="date" name="arrival" required>
             </label>
             </td>
         </tr>
         <tr>
-            <td>Departure date</td>
+            <td><fmt:message key = "departure.date"/></td>
             <td><label>
                 <input type="date" name="departure" required>
             </label>
@@ -46,7 +48,7 @@
     </table>
     <input type="submit" value="Request"/>
 </form>
-<p><a href="${pageContext.request.contextPath}/home">Back to homepage</a></p>
+<p><a href="${pageContext.request.contextPath}/home"><fmt:message key = "back.to.menu"/></a></p>
 </body>
 <%@ include file="loginlogout.jsp" %>
 </html>

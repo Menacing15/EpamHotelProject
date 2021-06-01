@@ -15,6 +15,9 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DataBaseDao dao = new DataBaseDao();
         req.getSession().setAttribute("dao", dao);
+        if(req.getSession().getAttribute("bundle") == null) {
+            req.getSession().setAttribute("bundle", "text");
+        }
 
         if (req.getSession().getAttribute("role") == null)
             req.getSession().setAttribute("role", "guest");

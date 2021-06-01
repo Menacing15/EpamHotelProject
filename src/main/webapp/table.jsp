@@ -1,11 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Edit Rooms</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/edit.css"/>
 </head>
 <body>
+<fmt:setBundle basename='<%=(String)request.getSession().getAttribute("bundle")%>'/>
+<%@ include file="switchlang.jsp" %>
+<br>
 <table>
     <tr>
         <c:forEach items="${columns}" var="column">
@@ -59,10 +63,10 @@
 </table>
 <c:choose>
     <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
-        <p><a href="${pageContext.request.contextPath}/home/rooms">Back to rooms menu</a></p>
+        <p><a href="${pageContext.request.contextPath}/home/rooms"><fmt:message key = "back.to.rooms.menu"/></a></p>
     </c:when>
     <c:otherwise>
-        <p><a href="${pageContext.request.contextPath}/home">Back to menu</a></p>
+        <p><a href="${pageContext.request.contextPath}/home"><fmt:message key = "back.to.menu"/></a></p>
     </c:otherwise>
 </c:choose>
 </body>
