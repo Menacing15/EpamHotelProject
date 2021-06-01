@@ -1,4 +1,5 @@
 # EPAM Java Course 
+<img width = "600" height = "300" src = "https://www.epam.com/etc/designs/epam-core/images/common/logo.png">
 ## Final Task 
 ## Theme: Hotel
 ```sh
