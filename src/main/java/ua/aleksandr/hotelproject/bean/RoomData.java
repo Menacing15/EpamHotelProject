@@ -1,5 +1,7 @@
 package ua.aleksandr.hotelproject.bean;
 
+import java.util.Objects;
+
 public class RoomData {
 
     public RoomData() {
@@ -57,5 +59,22 @@ public class RoomData {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RoomData roomData = (RoomData) o;
+        return number == roomData.number &&
+                size == roomData.size &&
+                price == roomData.price &&
+                Objects.equals(type, roomData.type) &&
+                Objects.equals(status, roomData.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, type, size, price, status);
     }
 }

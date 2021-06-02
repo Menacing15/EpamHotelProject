@@ -41,3 +41,14 @@ FATAL   2021-05-31 20:33:29,895 [http-bio-8080-exec-4] ua.aleksandr.hotelproject
 FATAL   2021-05-31 20:34:45,019 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: /table.jsp (line: 71, column: 0) /loginlogout.jsp (line: 3, column: 67) The prefix fmt specified in this tag directive has been previously used by an action in file /table.jsp line 67.
 FATAL   2021-05-31 20:34:45,019 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
 FATAL   2021-05-31 20:47:33,268 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-06-02 16:04:21,629 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-02 16:04:21,632 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-02 16:04:27,860 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-02 16:04:27,861 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-02 16:04:51,632 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 404
+FATAL   2021-06-02 16:08:54,740 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-02 16:08:54,742 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-02 16:11:12,946 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: Cannot forward after response has been committed
+FATAL   2021-06-02 16:11:12,949 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-02 16:11:47,824 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: Cannot forward after response has been committed
+FATAL   2021-06-02 16:11:47,825 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500

@@ -17,19 +17,24 @@ public class AccessFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
         HttpSession session = req.getSession(false);
 
-        boolean isEditPage = req.getRequestURI().endsWith("edit");
+        if(req.getSession().getAttribute("dao") != null) {
 
-        boolean isAddPage = req.getRequestURI().endsWith("add");
+            boolean isEditPage = req.getRequestURI().endsWith("edit");
 
-        boolean isUpdatePage = req.getRequestURI().endsWith("update");
+            boolean isAddPage = req.getRequestURI().endsWith("add");
 
-        boolean isAdmin = session.getAttribute("role").equals("admin");
+            boolean isUpdatePage = req.getRequestURI().endsWith("update");
 
-        if (!isAdmin && (isEditPage || isAddPage || isUpdatePage)) {
-            req.setAttribute("error", "ACCESS RESTRICTED");
-            req.getRequestDispatcher("/error.jsp").forward(req, resp);
+            boolean isAdmin = session.getAttribute("role").equals("admin");
+
+            if (!isAdmin && (isEditPage || isAddPage || isUpdatePage)) {
+                req.setAttribute("error", "ACCESS RESTRICTED");
+                req.getRequestDispatcher("/error.jsp").forward(req, resp);
+            } else {
+                filterChain.doFilter(req, servletResponse);
+            }
         } else {
-            filterChain.doFilter(req, servletResponse);
+            resp.sendRedirect(req.getContextPath() + "/home");
         }
     }
 
