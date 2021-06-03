@@ -13,8 +13,7 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        DataBaseDao dao = new DataBaseDao();
-        req.getSession().setAttribute("dao", dao);
+        req.getSession().setAttribute("dao", new DataBaseDao());
         if(req.getSession().getAttribute("bundle") == null) {
             req.getSession().setAttribute("bundle", "text");
         }

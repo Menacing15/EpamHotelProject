@@ -11,17 +11,15 @@ import java.io.IOException;
 
 public class AddRoomServlet extends HttpServlet {
 
-    private DataBaseDao dao;
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/addRoom.jsp").forward(req, resp);
         req.getSession().removeAttribute("newRoom");
-        dao = (DataBaseDao) req.getSession().getAttribute("dao");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        DataBaseDao dao = (DataBaseDao) req.getSession().getAttribute("dao");
         if (req.getParameter("CREATE") != null) {
             RoomData room = new RoomData();
             room.setNumber(Integer.parseInt(req.getParameter("number")));
