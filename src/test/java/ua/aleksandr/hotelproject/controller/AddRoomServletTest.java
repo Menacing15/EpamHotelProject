@@ -1,5 +1,6 @@
 package ua.aleksandr.hotelproject.controller;
 
+import org.junit.Before;
 import org.junit.Test;
 import ua.aleksandr.hotelproject.bean.RoomData;
 import ua.aleksandr.hotelproject.dao.DataBaseDao;
@@ -15,15 +16,19 @@ import static org.mockito.Mockito.*;
 
 public class AddRoomServletTest {
 
+    private HttpServletRequest request = mock(HttpServletRequest.class);
+    private HttpServletResponse response = mock(HttpServletResponse.class);
+    private HttpSession session = mock(HttpSession.class);
+    private DataBaseDao dao = mock(DataBaseDao.class);
+
+    @Before
+    public void init() {
+        when(session.getAttribute("dao")).thenReturn(dao);
+        when(request.getSession()).thenReturn(session);
+    }
+
     @Test
     public void testDoGetSuccess() throws ServletException, IOException {
-        HttpServletRequest request = mock(HttpServletRequest.class);
-        HttpServletResponse response = mock(HttpServletResponse.class);
-        HttpSession session = mock(HttpSession.class);
-        DataBaseDao dao = mock(DataBaseDao.class);
-
-        when(request.getSession()).thenReturn(session);
-        when(session.getAttribute("dao")).thenReturn(dao);
         when(request.getParameter("CREATE")).thenReturn("CREATE");
         when(request.getParameter("number")).thenReturn("999");
         when(request.getParameter("type")).thenReturn("Budget");
@@ -41,13 +46,6 @@ public class AddRoomServletTest {
 
     @Test
     public void testDoGetFail() throws ServletException, IOException {
-        HttpServletRequest request = mock(HttpServletRequest.class);
-        HttpServletResponse response = mock(HttpServletResponse.class);
-        HttpSession session = mock(HttpSession.class);
-        DataBaseDao dao = mock(DataBaseDao.class);
-
-        when(request.getSession()).thenReturn(session);
-        when(request.getSession().getAttribute("dao")).thenReturn(dao);
         when(request.getParameter("CREATE")).thenReturn("CREATE");
         when(request.getParameter("number")).thenReturn("1");
         when(request.getParameter("type")).thenReturn("Budget");

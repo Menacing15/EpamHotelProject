@@ -115,8 +115,8 @@ public class DataBaseDao {
         }
     }
 
-    public Set<String> getColumnNames(String tableName) {
-        Set<String> names = new LinkedHashSet<>();
+    public List<String> getColumnNames(String tableName) {
+        List<String> names = new ArrayList<>();
         String query = "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = ?";
         try (PreparedStatement statement = connector.getConnection().prepareStatement(query)) {
             statement.setString(1, tableName);

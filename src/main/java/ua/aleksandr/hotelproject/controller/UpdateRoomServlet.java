@@ -24,6 +24,7 @@ public class UpdateRoomServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        dao = (DataBaseDao) req.getSession().getAttribute("dao");
         if (req.getParameter("UPDATE") != null) {
             String[] dataToUpdate = new String[4];
 

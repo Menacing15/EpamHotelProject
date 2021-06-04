@@ -20,7 +20,7 @@ public class TableServlet extends HttpServlet {
         dao = (DataBaseDao) req.getSession().getAttribute("dao");
 
         List<List<String>> result;
-        List<String> columns = new ArrayList<>(dao.getColumnNames("rooms"));
+        List<String> columns = dao.getColumnNames("rooms");
         req.setAttribute("columns", columns);
 
         if (req.getParameter("ordered") != null) {
@@ -44,6 +44,8 @@ public class TableServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        dao = (DataBaseDao) req.getSession().getAttribute("dao");
+
         if (req.getParameter("REMOVE") != null) {
             String values = req.getParameter("deleted");
             int number = createRoomData(values);
