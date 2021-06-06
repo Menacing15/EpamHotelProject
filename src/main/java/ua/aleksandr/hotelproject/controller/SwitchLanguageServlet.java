@@ -12,7 +12,6 @@ public class SwitchLanguageServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         if(req.getSession().getAttribute("bundle").equals("text")) {
             req.getSession().setAttribute("bundle", "text_ru");
         } else {

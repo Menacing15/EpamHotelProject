@@ -13,6 +13,7 @@ public class ConnectorJDBC implements Connector {
 
     private String loginTable;
     private String roomsTable;
+    private String bookedRoomsTable;
 
     public ConnectorJDBC() {
         connect();
@@ -33,6 +34,7 @@ public class ConnectorJDBC implements Connector {
             password = properties.getProperty("password");
             loginTable = properties.getProperty("loginTableName");
             roomsTable = properties.getProperty("roomsTableName");
+            bookedRoomsTable = properties.getProperty("bookedTableName");
         } catch (IOException e) {
             throw new RuntimeException("Can't get property!", e);
         }
@@ -64,5 +66,10 @@ public class ConnectorJDBC implements Connector {
 
     public String getRoomsTable() {
         return roomsTable;
+    }
+
+    @Override
+    public String getBookedRoomTable() {
+        return bookedRoomsTable;
     }
 }

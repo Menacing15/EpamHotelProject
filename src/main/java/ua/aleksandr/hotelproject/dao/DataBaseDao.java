@@ -1,5 +1,6 @@
 package ua.aleksandr.hotelproject.dao;
 
+import ua.aleksandr.hotelproject.bean.BookingData;
 import ua.aleksandr.hotelproject.bean.RoomData;
 import ua.aleksandr.hotelproject.module.Connector;
 import ua.aleksandr.hotelproject.module.ConnectorJDBC;
@@ -163,6 +164,30 @@ public class DataBaseDao {
             preparedStatement.setInt(2, price);
             preparedStatement.setString(3, status);
             preparedStatement.setInt(4, number);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            printException(e);
+        }
+    }
+
+
+    public void bookRoom(int roomNumber, BookingData bookingData) {
+        try (PreparedStatement preparedStatement = connector.getConnection().
+                prepareStatement("INSERT INTO " + connector.getBookedRoomTable() + " (roomnumber, username, arrival, departure) VALUES (?, ?, ?, ?)")) {
+
+            preparedStatement.setInt(1, roomNumber);
+            preparedStatement.setString(2, bookingData.getBooker());
+            preparedStatement.setString(3, bookingData.getArrival().toString());
+            preparedStatement.setString(4, bookingData.getDeparture().toString());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            printException(e);
+        }
+
+        try (PreparedStatement preparedStatement = connector.getConnection().
+                prepareStatement("UPDATE " + connector.getRoomsTable() + " SET status = ? WHERE number = ?")) {
+            preparedStatement.setString(1, "Booked");
+            preparedStatement.setInt(2, roomNumber);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             printException(e);

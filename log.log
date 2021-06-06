@@ -52,3 +52,126 @@ FATAL   2021-06-02 16:11:12,946 [http-bio-8080-exec-1] ua.aleksandr.hotelproject
 FATAL   2021-06-02 16:11:12,949 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
 FATAL   2021-06-02 16:11:47,824 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: Cannot forward after response has been committed
 FATAL   2021-06-02 16:11:47,825 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:01:19,630 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:01:19,633 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:04:00,313 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:04:00,316 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:10:25,477 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:10:25,493 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:10:28,401 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:10:28,401 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:10:29,250 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:10:29,257 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:10:29,457 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:10:29,457 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:10:29,708 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:10:29,708 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:10:29,799 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:10:29,799 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:11:30,852 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:11:30,852 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:11:33,169 [http-bio-8080-exec-2] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:11:33,169 [http-bio-8080-exec-2] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:11:33,871 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:11:33,871 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:11:34,087 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:11:34,087 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:11:34,319 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:11:34,319 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:11:34,535 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:11:34,535 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:12:10,823 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:12:10,823 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:12:12,627 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:12:12,643 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:12:13,091 [http-bio-8080-exec-2] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:12:13,091 [http-bio-8080-exec-2] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:12:13,307 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:12:13,307 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:12:13,550 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:12:13,550 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:15:31,815 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 15:15:31,831 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:20:04,248 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 15:20:04,251 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:21:10,605 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 15:21:10,605 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:22:14,377 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 15:22:14,377 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:28:47,921 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 15:28:47,921 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:35:33,950 [http-bio-8080-exec-9] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 15:35:33,950 [http-bio-8080-exec-9] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 15:36:02,695 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 15:36:02,695 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:25:16,443 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:25:16,443 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:25:51,695 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:25:51,711 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:26:29,309 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:26:29,309 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:30:58,478 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:30:58,478 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:34:25,551 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:34:25,551 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:38:19,686 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:38:19,686 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:38:50,894 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:38:50,894 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:43:37,980 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:43:37,980 [http-bio-8080-exec-1] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:50:00,031 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:50:00,031 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 20:52:41,212 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 20:52:41,212 [http-bio-8080-exec-7] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 21:25:12,324 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 21:25:12,326 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 21:27:08,104 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 21:27:08,106 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 21:27:49,324 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 21:27:49,327 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 21:27:51,850 [http-bio-8080-exec-9] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 21:27:51,851 [http-bio-8080-exec-9] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 21:27:52,413 [http-bio-8080-exec-2] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 21:27:52,413 [http-bio-8080-exec-2] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 21:37:43,999 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 21:37:43,999 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Error, status code: 500
+FATAL   2021-06-05 23:21:56,401 [http-bio-8080-exec-9] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-05 23:21:56,402 [http-bio-8080-exec-9] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 404
+FATAL   2021-06-05 23:22:03,321 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-05 23:22:03,321 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 500
+FATAL   2021-06-06 12:31:14,434 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-06 12:31:14,436 [http-bio-8080-exec-6] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 404
+FATAL   2021-06-06 12:31:20,349 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-06 12:31:20,350 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 404
+FATAL   2021-06-06 12:31:23,382 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-06 12:31:23,383 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 404
+FATAL   2021-06-06 12:32:23,153 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-06 12:32:23,155 [http-bio-8080-exec-3] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 404
+FATAL   2021-06-06 12:32:30,664 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-06 12:32:30,664 [http-bio-8080-exec-8] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 404
+FATAL   2021-06-06 12:32:41,357 [http-bio-8080-exec-2] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: null
+FATAL   2021-06-06 12:32:41,357 [http-bio-8080-exec-2] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 404
+FATAL   2021-06-06 13:33:36,553 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-06 13:33:36,556 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 500
+FATAL   2021-06-06 13:33:41,057 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.NullPointerException
+FATAL   2021-06-06 13:33:41,057 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 500
+FATAL   2021-06-06 13:34:59,529 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+FATAL   2021-06-06 13:34:59,532 [http-bio-8080-exec-10] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 500
+FATAL   2021-06-06 13:37:06,929 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+FATAL   2021-06-06 13:37:06,931 [http-bio-8080-exec-5] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 500
+FATAL   2021-06-06 13:53:04,610 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Exception: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 65 in the jsp file: /table.jsp
+The method print(boolean) in the type JspWriter is not applicable for the arguments (void)
+62:     </c:choose>
+63: </table>
+64: <span><%=(request.getSession().getAttribute("bookError") == null) ? "" : request.getSession().getAttribute("bookError")%></span>
+65: <%=request.getSession().removeAttribute("logError")%>
+66: <c:choose>
+67:     <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
+68:         <p><a href="${pageContext.request.contextPath}/home/rooms"><fmt:message key = "back.to.rooms.menu"/></a></p>
+
+
+Stacktrace:
+FATAL   2021-06-06 13:53:04,612 [http-bio-8080-exec-4] ua.aleksandr.hotelproject.controller.ErrorHandler  - Status code: 500

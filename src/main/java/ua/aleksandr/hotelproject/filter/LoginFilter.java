@@ -19,27 +19,31 @@ public class LoginFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) res;
         HttpSession session = httpRequest.getSession(false);
 
-        String role = (String) session.getAttribute("role");
-        if (role != null) {
+        //if (session != null) {
+            String role = (String) session.getAttribute("role");
+            if (role != null) {
 
-            boolean isGuest = (role.equals("guest"));
+                boolean isGuest = (role.equals("guest"));
 
-            boolean isLoginPage = httpRequest.getRequestURI().endsWith("login");
-            boolean isRegisterPage = httpRequest.getRequestURI().endsWith("register");
-            boolean isTablePage = httpRequest.getRequestURI().endsWith("table");
-            boolean isHomePage = httpRequest.getRequestURI().endsWith("home");
+                boolean isLoginPage = httpRequest.getRequestURI().endsWith("login");
+                boolean isRegisterPage = httpRequest.getRequestURI().endsWith("register");
+                boolean isTablePage = httpRequest.getRequestURI().endsWith("table");
+                boolean isHomePage = httpRequest.getRequestURI().endsWith("home");
 
-            if (!isGuest && isLoginPage) {
-                resp.sendRedirect(((HttpServletRequest) req).getContextPath() + "/home");
-            }
-            if (!(isLoginPage || isRegisterPage || isTablePage || isHomePage) && isGuest) {
-                resp.sendRedirect(((HttpServletRequest) req).getContextPath() + "/login");
+                if (!isGuest && isLoginPage) {
+                    resp.sendRedirect(((HttpServletRequest) req).getContextPath() + "/home");
+                }
+                if (!(isLoginPage || isRegisterPage || isTablePage || isHomePage) && isGuest) {
+                    resp.sendRedirect(((HttpServletRequest) req).getContextPath() + "/login");
+                } else {
+                    chain.doFilter(req, res);
+                }
             } else {
                 chain.doFilter(req, res);
             }
-        } else {
+       /*} else {
             chain.doFilter(req, res);
-        }
+        }*/
     }
 
     @Override

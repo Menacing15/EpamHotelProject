@@ -33,7 +33,7 @@
                         <form action="<%=request.getContextPath()%>/home/rooms/table" method="post">
                             <input type="hidden" name="chosen" value="${row}"/>
                             <input type="hidden" name="CHOOSE"/>
-                            <input type="submit" value="Book"/>
+                            <input type="submit" value="<fmt:message key = "book"/>"/>
                         </form>
                     </td>
 
@@ -51,7 +51,7 @@
                                 <form action="<%=request.getContextPath()%>/home/rooms/table" method="post">
                                     <input type="hidden" name="edited" value="${row}"/>
                                     <input type="hidden" name="EDIT"/>
-                                    <input type="submit" value="Edit"/>
+                                    <input type="submit" value="<fmt:message key = "edit"/>"/>
                                 </form>
                             </td>
                         </c:when>
@@ -61,6 +61,7 @@
         </c:when>
     </c:choose>
 </table>
+<span><%=(request.getAttribute("bookError") == null) ? "" : request.getAttribute("bookError")%></span>
 <c:choose>
     <c:when test='<%=(request.getSession().getAttribute("role").equals("admin"))%>'>
         <p><a href="${pageContext.request.contextPath}/home/rooms"><fmt:message key = "back.to.rooms.menu"/></a></p>

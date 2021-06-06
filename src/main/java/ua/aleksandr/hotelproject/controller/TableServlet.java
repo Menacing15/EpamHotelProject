@@ -58,8 +58,13 @@ public class TableServlet extends HttpServlet {
         }
 
         if (req.getParameter("CHOOSE") != null) {
-            req.getSession().setAttribute("chosen", req.getParameter("chosen"));
-            resp.sendRedirect(req.getContextPath() + "/home/book");
+            if(req.getParameter("chosen").endsWith("Booked]")) {
+                req.setAttribute("bookError", "Room is already booked");
+                doGet(req, resp);
+            } else {
+                req.getSession().setAttribute("chosen", req.getParameter("chosen"));
+                resp.sendRedirect(req.getContextPath() + "/home/book");
+            }
         }
         if (req.getParameter("ORDER") != null) {
             doGet(req, resp);

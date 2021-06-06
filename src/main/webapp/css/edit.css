@@ -31,3 +31,9 @@ p {
     text-shadow: 1px 1px 1px black;
     font-family: HelveticaNeueCyr, cursive;
 }
+span {
+    color:red;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px black;
+    font-family: HelveticaNeueCyr, cursive;
+}

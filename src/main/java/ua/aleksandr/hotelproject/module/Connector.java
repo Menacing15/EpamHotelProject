@@ -10,4 +10,6 @@ public interface Connector {
     String getLoginTable();
 
     String getRoomsTable();
+
+    String getBookedRoomTable();
 }

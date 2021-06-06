@@ -20,6 +20,8 @@ public class LoginServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
+        req.getSession().setAttribute("user", email);
+
         DataBaseDao dao = (DataBaseDao)req.getSession().getAttribute("dao");
 
         LoginData loginData = new LoginData();
@@ -30,8 +32,15 @@ public class LoginServlet extends HttpServlet {
         String role = dao.authenticate(loginData);
 
         if(role.equals("admin") || role.equals("user")) {
+            req.getSession().setAttribute("role", role);
             req.getSession().removeAttribute("logError");
-            resp.sendRedirect("home");
+
+            String referer = req.getHeader("Referer");
+            if(referer.endsWith("login")) {
+                resp.sendRedirect("home");
+            } else {
+                resp.sendRedirect(referer);
+            }
         }
         else {
             req.getSession().setAttribute("logError", "Bad login or password");

@@ -5,6 +5,7 @@
     <title>Update</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
+<fmt:setBundle basename='<%=(String)request.getSession().getAttribute("bundle")%>'/>
 <%@ include file="switchlang.jsp" %>
 <body>
 <h2><fmt:message key = "update.header"/><%=request.getSession().getAttribute("edited")%>
@@ -37,6 +38,7 @@
                     </option>
                     <option>Available</option>
                     <option>Taken</option>
+                    <option>Booked</option>
                 </select>
             </label></td>
         </tr>

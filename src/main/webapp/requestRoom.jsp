@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/form.css"/>
 </head>
 <fmt:setBundle basename='<%=(String)request.getSession().getAttribute("bundle")%>'/>
+<%@ include file="switchlang.jsp" %>
 <body>
 <h2><fmt:message key = "request.header"/></h2>
 <form action="<%=request.getContextPath()%>/home/book" method="post">
