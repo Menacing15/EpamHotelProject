@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class BookingServlet extends HttpServlet {
 
@@ -28,12 +29,15 @@ public class BookingServlet extends HttpServlet {
 
         DataBaseDao dao = (DataBaseDao) req.getSession().getAttribute("dao");
         String booker = (String) req.getSession().getAttribute("user");
-        BookingData bookingData = new BookingData(booker, arrival, departure);
+
+        LocalDateTime bookingTime = LocalDateTime.now();
+        BookingData bookingData = new BookingData(booker, arrival, departure, bookingTime, "Booked");
 
         String chosenRoom = (String)req.getSession().getAttribute("chosen");
         String [] values = reformatToArrayValues(chosenRoom);
         int roomNumber = Integer.parseInt(values[0]);
         dao.bookRoom(roomNumber, bookingData);
+        resp.sendRedirect(req.getContextPath() + "/home/profile");
     }
 
     private String[] reformatToArrayValues(String values) {

@@ -159,7 +159,8 @@ public class DataBaseDao {
         int price = Integer.parseInt(data[2]);
         String status = data[3];
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("UPDATE " + connector.getRoomsTable() + " SET type = ?, price = ?, status = ? WHERE number = ?")) {
+                prepareStatement("UPDATE " + connector.getRoomsTable() +
+                        " SET type = ?, price = ?, status = ? WHERE number = ?")) {
             preparedStatement.setString(1, type);
             preparedStatement.setInt(2, price);
             preparedStatement.setString(3, status);
@@ -173,12 +174,15 @@ public class DataBaseDao {
 
     public void bookRoom(int roomNumber, BookingData bookingData) {
         try (PreparedStatement preparedStatement = connector.getConnection().
-                prepareStatement("INSERT INTO " + connector.getBookedRoomTable() + " (roomnumber, username, arrival, departure) VALUES (?, ?, ?, ?)")) {
+                prepareStatement("INSERT INTO " + connector.getBookedRoomTable() +
+                        " (roomnumber, username, arrival, departure, bookingTime, status) VALUES (?, ?, ?, ?, ?, ?)")) {
 
             preparedStatement.setInt(1, roomNumber);
             preparedStatement.setString(2, bookingData.getBooker());
             preparedStatement.setString(3, bookingData.getArrival().toString());
             preparedStatement.setString(4, bookingData.getDeparture().toString());
+            preparedStatement.setString(5, bookingData.getBookingTime().toString());
+            preparedStatement.setString(6, bookingData.getStatus());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             printException(e);
